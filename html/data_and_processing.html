@@ -123,22 +123,28 @@
       <h4>Prototype 1</h4>
       <ul>
         <li><strong>Original Dataset Columns Used:</strong> Call Type, Received DtTm, Response DtTm</li>
-        <li><strong>New Added Column:</strong> Decimal Response Time (Time in Minutes of difference in Received DtTm and Respnse DtTm)</li>
+        <li><strong>New Added Columns:</strong> Decimal Response Time (Time in Minutes of difference in Received DtTm and Respnse DtTm)</li>
         <li><strong>Data Wrangling Performed:</strong> Eliminated date with response time of zero (null).
-            eliminated date that the fire department did not response, which had missing Response DtTm value.</li>
+            eliminated date that the fire department did not response, which had missing Response DtTm value.
+            Limited the timeframe of calls to January 2019.</li>
         <li><strong>Prototype Objective for Reference:</strong> Show average response time (in minutes) for each type of incident call category.</li>
       </ul>
       <h4>Prototype 2</h4>
       <ul>
         <li><strong>Original Dataset Columns Used:</strong> Call Type</li>
-        <li><strong>Data Wrangling Performed:</strong> No wrangling done, all data included.</li>
+        <li><strong>New Added Columns:</strong> none</li>
+        <li><strong>Data Wrangling Performed:</strong> Limited the timeframe of calls to January 2019.</li>
         <li><strong>Prototype Objective for Reference:</strong> Show proportions of majority of incident calls.</li>
       </ul>
 
       <h4>Prototype 3</h4>
-      <li><strong>Original Dataset Columns Used:</strong> Fill in text here</li>
-      <li><strong>Data Wrangling Performed:</strong> Fill in text here</li>
-      <li><strong>Prototype Objective for Reference:</strong> Fill in text here</li>
+      <li><strong>Original Dataset Columns Used:</strong> Call Type, Neighborhoods - Analysis Boundaries</li>
+      <li><strong>New Added Columns:</strong> none</li>
+      <li><strong>Data Wrangling Performed:</strong> Limited the timeframe of calls to January 2019.
+          Limited the data to the top five most common call types which were alarms, citizen assist / service call,
+          medical incident, structure fire, and traffic collusion in January 2019.</li>
+      <li><strong>Prototype Objective for Reference:</strong> Shows the number of calls for the top five call
+          categories broked down and stacked for each San Francisco neighborhood.</li>
     </div>
   </section>
 
