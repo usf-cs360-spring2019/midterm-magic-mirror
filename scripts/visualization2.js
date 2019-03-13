@@ -23,13 +23,20 @@ var loadingChart2 = function() {
   }
   d3.csv("../../input/visualization2/avg-response-time-data.csv", convertRow).then(() => {}).then(function() {
     outputObj2.calltype.reverse();
-  }).then(drawBarChart2);
+  }).then(drawBarChart2).then();
 }
 
 var drawBarChart2 = function() {
+  var tooltip = d3.select("body").append("div").attr("class", "toolTip");
+
+
   let countMin = 0;
   let countMax = 45;
   let svg = d3.select("body").select("section.section").select("div").select("svg");
+  var div = d3.select("body").select("section.section").select("div").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
   let margin = {
     top: 15,
     right: 35,
@@ -91,8 +98,16 @@ var drawBarChart2 = function() {
                 .attr("height", function(d, i) {
                   return categories.bandwidth();
                 })
-
-                .attr("fill", "blue");
+                .attr("fill", "blue")
+                .on("mouseover", function (d, i) {
+                  console.log("test");
+                  tooltip
+                  .style("left", d3.event.pageX - 50 + "px")
+                  .style("top", d3.event.pageY - 70 + "px")
+                  .style("display", "inline-block")
+                  .html(("Call Type: " + outputObj2.calltype[19 - i]) + "<br>" + "Avg Response in Minutes: " + (outputObj2.avgresp[i]));
+                })
+                .on("mouseout", function(d){ tooltip.style("display", "none");});
 
             bars2.transition()
               .attr("y", function(d) { return responsetime(d.value); })
@@ -107,7 +122,6 @@ var drawBarChart2 = function() {
               .attr("height", function(d) { return plotHeight - responsetime(countMin); })
               .remove();
 
-
         svg.append("text")
           .attr("transform",
             "translate(" + (130) + " ," +
@@ -121,4 +135,6 @@ var drawBarChart2 = function() {
           //                    (390) + ")")
           //   .style("text-anchor", "middle")
           //   .text("Number of Records");
+
+
 }
