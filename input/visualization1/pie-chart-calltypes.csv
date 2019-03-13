@@ -1,0 +1,23 @@
+﻿CallType,NumRecords
+Administrative,2
+Alarms,3301
+Assist Police,1
+Citizen Assist / Service Call,400
+Confined Space / Structure Collapse,7
+Electrical Hazard,231
+Elevator / Escalator Rescue,71
+Fuel Spill,26
+Gas Leak (Natural and LP Gases),164
+HazMat,1
+Industrial Accidents,9
+Medical Incident,17027
+Odor (Strange / Unknown),15
+Other,375
+Outside Fire,321
+Smoke Investigation (Outside),41
+Structure Fire,2192
+Traffic Collision,820
+Train / Rail Incident,32
+Vehicle Fire,69
+Water Rescue,152
+Watercraft in Distress,14
