@@ -80,8 +80,6 @@ var drawBarChart2 = function() {
               bars2.enter().append("rect")
                 .attr("class", "bar")
                 .attr("width", function(d, i) {
-                  console.log(d);
-                  console.log(i);
                   return responsetime(outputObj2.avgresp[i]);
                 })
                 .attr("x", function(d, i) {
