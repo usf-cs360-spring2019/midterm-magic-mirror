@@ -105,7 +105,7 @@ var drawBarChart2 = function() {
                   .style("left", d3.event.pageX - 50 + "px")
                   .style("top", d3.event.pageY - 70 + "px")
                   .style("display", "inline-block")
-                  .html(("Call Type: " + outputObj2.calltype[19 - i]) + "<br>" + "Avg Response in Minutes: " + (outputObj2.avgresp[i]));
+                  .html(("Call Type: " + outputObj2.calltype[19 - i]) + "<br>" + "Avg Response in Minutes: " + Math.round(outputObj2.avgresp[i] * 100) / 100);
                 })
                 .on("mouseout", function(d){ tooltip.style("display", "none");});
 
