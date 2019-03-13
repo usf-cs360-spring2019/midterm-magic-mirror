@@ -1,21 +1,21 @@
 calltype,responsetime,numrecords
 Watercraft in Distress,12.616153846,1
-Vehicle Fire,3.162835821
-Train/Rail Incident,43.199655172
-Traffic Collision,3.391987578
-Structure Fire,2.934206608
-Smoke Investigation (Outside),4.135365854
-Outside Fire,3.820220820
-Other,3.934344262
-Odor (Strange/Unknown),4.004666668
-Medical Incident,3.184740696
-Industrial Accidents,5.9888888889
-HazMat,4.36
-Gas Leak (Natural and LP Gases),3.729938650
-Fuel Spill,4.261538462
-Elevator/Escalator Rescue,3.458611594
-Electrical Hazard,4.146846847
-Confined Space/Structure Collapse,2.925714286
-Citized Assist/Service Call,5.494344473
-Assist Police,1.37
-Alarms,3.314009916
+Vehicle Fire,3.162835821,1
+Train/Rail Incident,43.199655172,1
+Traffic Collision,3.391987578,1
+Structure Fire,2.934206608,1
+Smoke Investigation (Outside),4.135365854,1
+Outside Fire,3.820220820,1
+Other,3.934344262,1
+Odor (Strange/Unknown),4.004666668,1
+Medical Incident,3.184740696,1
+Industrial Accidents,5.9888888889,1
+HazMat,4.36,1
+Gas Leak (Natural and LP Gases),3.729938650,1
+Fuel Spill,4.261538462,1
+Elevator/Escalator Rescue,3.458611594,1
+Electrical Hazard,4.146846847,1
+Confined Space/Structure Collapse,2.925714286,1
+Citized Assist/Service Call,5.494344473,1
+Assist Police,1.37,1
+Alarms,3.314009916,1
