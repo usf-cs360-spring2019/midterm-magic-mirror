@@ -21,7 +21,7 @@ var loadingChart2 = function() {
     }
     return out2;
   }
-  d3.csv("input/visualization2/avg-response-time-data.csv", convertRow).then(() => {}).then(function() {
+  d3.csv("../../input/visualization2/avg-response-time-data.csv", convertRow).then(() => {}).then(function() {
     outputObj2.calltype.reverse();
   }).then(drawBarChart2);
 }
