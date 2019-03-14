@@ -1,6 +1,7 @@
 let outputObj2 = {
   calltype:[],
   avgresp: [],
+  callcount: [],
 }
 
 var loadingChart2 = function() {
@@ -14,6 +15,9 @@ var loadingChart2 = function() {
           break;
         case "responsetime":
           outputObj2.avgresp.push(+row[col]);
+          break;
+        case "numrecords":
+          outputObj2.callcount.push(+row[col]);
           break;
         default:
           break;
@@ -99,15 +103,18 @@ var drawBarChart2 = function() {
                   return categories.bandwidth();
                 })
                 .attr("fill", "blue")
-                .on("mouseover", function (d, i) {
+                .on("mouseenter", function (d, i) {
                   console.log("test");
                   tooltip
-                  .style("left", d3.event.pageX - 50 + "px")
-                  .style("top", d3.event.pageY - 70 + "px")
+                  .style("left", d3.event.pageX + 30 + "px")
+                  .style("top", d3.event.pageY + 10 + "px")
                   .style("display", "inline-block")
-                  .html(("Call Type: " + outputObj2.calltype[19 - i]) + "<br>" + "Avg Response in Minutes: " + Math.round(outputObj2.avgresp[i] * 100) / 100);
+                  .html(("<strong>Call Type: </strong>" + outputObj2.calltype[19 - i])
+                   + "<br>" + "<strong>Avg Response in Minutes: </strong>"
+                   + Math.round(outputObj2.avgresp[i] * 100) / 100 + "<br>"
+                   + "<strong>Number of Calls: </strong>" + outputObj2.callcount[i])
                 })
-                .on("mouseout", function(d){ tooltip.style("display", "none");});
+                //.on("mouseout", function(d){ tooltip.style("display", "none");});
 
             bars2.transition()
               .attr("y", function(d) { return responsetime(d.value); })
