@@ -131,7 +131,7 @@ var drawBarChart2 = function() {
                    + Math.round(outputObj2.avgresp[i] * 100) / 100 + "<br>"
                    + "<strong>Number of Calls: </strong>" + outputObj2.callcount[i])
                 })
-                //.on("mouseout", function(d){ tooltip.style("display", "none");});
+                .on("mouseout", function(d){ tooltip.style("display", "none");});
 
             bars2.transition()
               .attr("y", function(d) { return responsetime(d.value); })
