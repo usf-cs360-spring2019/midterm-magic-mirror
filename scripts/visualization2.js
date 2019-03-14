@@ -30,6 +30,15 @@ var loadingChart2 = function() {
   }).then(drawBarChart2).then();
 }
 
+var color = d3.scaleLinear()
+    .domain([13, 44])
+    .range(["#ff8080", "#ff0000"]);
+
+var color2 = d3.scaleLinear()
+    .domain([1, 6])
+    .range(["#ccffcc", "#004d00"]);
+
+
 var drawBarChart2 = function() {
   var tooltip = d3.select("body").append("div").attr("class", "toolTip");
 
@@ -102,7 +111,15 @@ var drawBarChart2 = function() {
                 .attr("height", function(d, i) {
                   return categories.bandwidth();
                 })
-                .attr("fill", "blue")
+                .attr("fill", function(d, i) {
+                  if (outputObj2.avgresp[i] > 12) {
+                    return color(outputObj2.avgresp[i])
+                  }
+                  else {
+                    return color2(outputObj2.avgresp[i])
+                  }
+                  })
+                //.attr("fill", "blue")
                 .on("mouseenter", function (d, i) {
                   console.log("test");
                   tooltip
