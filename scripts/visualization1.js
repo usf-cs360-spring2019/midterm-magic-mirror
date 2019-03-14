@@ -21,9 +21,6 @@ convertRow = function(row, index){
 d3.csv("..\\..\\input\\visualization1\\pie-chart-calltypes.csv", convertRow)
 .then(() => {
 DrawBarChart();
-for(var i=0; i<4; i++){
-  console.log(output.CallType[i]);
-}
 });
 }
 DrawBarChart = function(){
@@ -104,7 +101,7 @@ names = output.CallType;
             .style('font-familly', 'Arial')
             .style('font-size', 14)
             .style("fill", "black")
-            .text(function(d, i){if (Math.floor((output.NumRecords[i]/(25271))*100) >= 1){
+            .text(function(d, i){if (Math.floor((output.NumRecords[i]/(25271))*100) > 1){
               return Math.floor((output.NumRecords[i]/(25271))*100) + "%";
             } else{
               return;
