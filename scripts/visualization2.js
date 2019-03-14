@@ -2,6 +2,8 @@ let outputObj2 = {
   calltype:[],
   avgresp: [],
   callcount: [],
+  low: [],
+  high: [],
 }
 
 var loadingChart2 = function() {
@@ -18,6 +20,12 @@ var loadingChart2 = function() {
           break;
         case "numrecords":
           outputObj2.callcount.push(+row[col]);
+          break;
+        case "low":
+          outputObj2.low.push(+row[col]);
+          break;
+        case "high":
+          outputObj2.high.push(+row[col]);
           break;
         default:
           break;
@@ -129,7 +137,9 @@ var drawBarChart2 = function() {
                   .html(("<strong>Call Type: </strong>" + outputObj2.calltype[19 - i])
                    + "<br>" + "<strong>Avg Response in Minutes: </strong>"
                    + Math.round(outputObj2.avgresp[i] * 100) / 100 + "<br>"
-                   + "<strong>Number of Calls: </strong>" + outputObj2.callcount[i])
+                   + "<strong>Number of Calls: </strong>" + outputObj2.callcount[i]
+                   + "<br>" + "<strong>Low Value: </strong>" + outputObj2.low[i]
+                   + "<br>" + "<strong>High Value: </strong>" + outputObj2.high[i])
                 })
                 .on("mouseout", function(d){ tooltip.style("display", "none");});
 

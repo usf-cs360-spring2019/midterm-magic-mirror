@@ -1,21 +1,21 @@
 calltype,responsetime,numrecords,low,high
-Watercraft in Distress,12.616153846,13
-Vehicle Fire,3.162835821,67
-Train/Rail Incident,43.199655172,29
-Traffic Collision,3.391987578,805
-Structure Fire,2.934206608,2149
-Smoke Investigation (Outside),4.135365854,41
-Outside Fire,3.820220820,317
-Other,3.934344262,366
-Odor (Strange/Unknown),4.004666668,15
-Medical Incident,3.184740696,16660
-Industrial Accidents,5.9888888889,9
-HazMat,4.36,1
-Gas Leak (Natural and LP Gases),3.729938650,163
-Fuel Spill,4.261538462,26
-Elevator/Escalator Rescue,3.458611594,69
-Electrical Hazard,4.146846847,222
-Confined Space/Structure Collapse,2.925714286,7
-Citizen Assist/Service Call,5.494344473,389
-Assist Police,1.37,1
-Alarms,3.314009916,3227
+Watercraft in Distress,12.616153846,13,10.37,15.39
+Vehicle Fire,3.162835821,67,0.5,12.02
+Train/Rail Incident,43.199655172,29,12.07,50.28
+Traffic Collision,3.391987578,805,0.02,34.39
+Structure Fire,2.934206608,2149,0.1,54.19
+Smoke Investigation (Outside),4.135365854,41,1.59,10.01
+Outside Fire,3.820220820,317,0.16,31.38
+Other,3.934344262,366,0.15,50.3
+Odor (Strange/Unknown),4.004666668,15,2.54,6.51
+Medical Incident,3.184740696,16660,0.09,59.1
+Industrial Accidents,5.9888888889,9,2.41,12.46
+HazMat,4.36,1,4.36,4.36
+Gas Leak (Natural and LP Gases),3.729938650,163,1.08,19.46
+Fuel Spill,4.261538462,26,1.19,10.28
+Elevator/Escalator Rescue,3.458611594,69,0.53,15.37
+Electrical Hazard,4.146846847,222,0.32,54.57
+Confined Space/Structure Collapse,2.925714286,7,1.58,7.48
+Citizen Assist/Service Call,5.494344473,389,0.19,51.37
+Assist Police,1.37,1,1.37,1.37
+Alarms,3.314009916,3227,0.21,54.35
