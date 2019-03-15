@@ -46,14 +46,18 @@ var color2 = d3.scaleLinear()
     .domain([1, 6])
     .range(["#ccffcc", "#004d00"]);
 
-
 var drawBarChart2 = function() {
   var tooltip = d3.select("body").append("div").attr("class", "toolTip");
   var reset = d3.select("body").select("section.section").select("div").select("div.reset");
   var viewLowerData = d3.select("body").select("section.section").select("div").select("div.lowerData");
-
+  //var viewLowerData = d3.select("body").select("section.section").select("div").select("div.lowerData").select("input");
   let countMin = 0;
   let countMax = 45;
+
+  viewLowerData.on("click", function(d, i) {
+    loadLowerRange();
+  })
+
   let svg = d3.select("body").select("section.section").select("div").select("svg");
   var div = d3.select("body").select("section.section").select("div").append("div")
     .attr("class", "tooltip")
@@ -70,7 +74,6 @@ var drawBarChart2 = function() {
     let plotHeight = bounds.height - margin.top - margin.bottom;
 
     reset.style("margin-left", plotWidth);
-    console.log(plotWidth);
     let responsetime = d3.scaleLinear()
       .domain([0, countMax])
       .range([0, plotWidth])
@@ -82,6 +85,7 @@ var drawBarChart2 = function() {
           .paddingInner(0.1);
 
           let plot = svg.select("g#plotChart2");
+          console.log("Plot size: " + plot.size());
 
           if (plot.size() < 1) {
             plot = svg.append("g").attr("id", "plotChart2");
@@ -104,6 +108,8 @@ var drawBarChart2 = function() {
             else {
               plot.select("g#y-axisChart2").call(yAxis);
             }
+
+
 
             let bars2 = plot.selectAll("rect")
               .data(outputObj2.calltype);
@@ -164,8 +170,8 @@ var drawBarChart2 = function() {
                 .on("mouseout", function(d){ tooltip.style("display", "none");});
 
             bars2.transition()
-              .attr("y", function(d) { return responsetime(d.value); })
-              .attr("height", function(d) { return plotHeight - responsetime(d.value); });
+              // .attr("y", function(d, i) { return responsetime(d.value); })
+              // .attr("height", function(d) { return plotHeight - responsetime(d.value); });
 
             bars2.exit()
               .each(function(d, i, nodes) {
@@ -178,22 +184,34 @@ var drawBarChart2 = function() {
 
               reset.on("click", function(d, i) {
                 console.log("clicked reset");
-                plot.selectAll("rect").attr("fill", function(d, j) {
-                  if (outputObj2.avgresp[j] > 12) {
-                    return color(outputObj2.avgresp[j])
-                  }
-                  else {
-                    return color2(outputObj2.avgresp[j])
-                  }
+                responsetime.domain([0, countMax]);
+                svg.select("xAxis")
+                  .transition().duration(1500)
+                  .call(xAxis);
+                plot.selectAll("rect")
+                  .attr("fill", function(d, j) {
+                    if (outputObj2.avgresp[j] > 12) {
+                      return color(outputObj2.avgresp[j])
+                    }
+                    else {
+                      return color2(outputObj2.avgresp[j])
+                    }
+                  })
+                  .attr("width", function(d, k) {
+                    console.log(k);
+                    console.log(outputObj2.avgresp[k]);
+                  return responsetime(outputObj2.avgresp[k]);
                 });
+                plot.select("g#x-axisChart2").call(xAxis);
               })
 
-        svg.append("text")
-          .attr("transform",
-            "translate(" + (130) + " ," +
-                           (10 + margin.top) + ")")
-          .style("text-anchor", "middle")
-          .text("Incident Category");
+
+        // svg.append("text")
+        //   .attr("transform",
+        //     "translate(" + (130) + " ," +
+        //                    (10 + margin.top) + ")")
+        //   .style("text-anchor", "middle")
+        //   .text("Incident Category");
 
           // svg.append("text")
           //   .attr("transform",
@@ -202,5 +220,23 @@ var drawBarChart2 = function() {
           //   .style("text-anchor", "middle")
           //   .text("Number of Records");
 
+          var loadLowerRange = function() {
+            console.log("in loadLowerRange 1");
+            responsetime.domain([0, 6]).nice();
+            svg.select("xAxis")
+              .transition()
+              .call(xAxis);
+            plot.selectAll("rect")
+              .attr("width", function(d, i) {
+                if (outputObj2.avgresp[i] > 12) {
+                  return 0;
+                }
+                else {
+                  return responsetime(outputObj2.avgresp[i]);
+                }
 
+              //return responsetime(outputObj2.avgresp[i]);
+            });
+            plot.select("g#x-axisChart2").call(xAxis);
+          }
 }
