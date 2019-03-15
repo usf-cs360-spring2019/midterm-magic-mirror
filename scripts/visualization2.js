@@ -49,7 +49,8 @@ var color2 = d3.scaleLinear()
 
 var drawBarChart2 = function() {
   var tooltip = d3.select("body").append("div").attr("class", "toolTip");
-
+  var reset = d3.select("body").select("section.section").select("div").select("div.reset");
+  var viewLowerData = d3.select("body").select("section.section").select("div").select("div.lowerData");
 
   let countMin = 0;
   let countMax = 45;
@@ -68,6 +69,8 @@ var drawBarChart2 = function() {
     let plotWidth = bounds.width - margin.right - margin.left;
     let plotHeight = bounds.height - margin.top - margin.bottom;
 
+    reset.style("margin-left", plotWidth);
+    console.log(plotWidth);
     let responsetime = d3.scaleLinear()
       .domain([0, countMax])
       .range([0, plotWidth])
@@ -80,13 +83,13 @@ var drawBarChart2 = function() {
 
           let plot = svg.select("g#plotChart2");
 
-            if (plot.size() < 1) {
-              plot = svg.append("g").attr("id", "plotChart2");
-              plot.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-            }
+          if (plot.size() < 1) {
+            plot = svg.append("g").attr("id", "plotChart2");
+            plot.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+          }
 
-            let xAxis = d3.axisBottom(responsetime);
-            let yAxis = d3.axisLeft(categories);
+          let xAxis = d3.axisBottom(responsetime);
+          let yAxis = d3.axisLeft(categories);
 
             if (plot.select("g#y-axisChart2").size() < 1) {
               let xGroup = plot.append("g").attr("id", "x-axisChart2");
@@ -128,6 +131,23 @@ var drawBarChart2 = function() {
                   }
                   })
                 //.attr("fill", "blue")
+                .on("click", function (d, i) {
+                  console.log("clicked " + i);
+                  plot.selectAll("rect").attr("fill", function(d, j) {
+                    if (i != j) {
+                      return "gray";
+                    }
+                    else {
+                      if (outputObj2.avgresp[i] > 12) {
+                        return color(outputObj2.avgresp[i])
+                      }
+                      else {
+                        return color2(outputObj2.avgresp[i])
+                      }
+                    }
+                  });
+                })
+
                 .on("mouseenter", function (d, i) {
                   console.log("test");
                   tooltip
@@ -155,6 +175,18 @@ var drawBarChart2 = function() {
               .attr("y", function(d) { return responsetime(countMin); })
               .attr("height", function(d) { return plotHeight - responsetime(countMin); })
               .remove();
+
+              reset.on("click", function(d, i) {
+                console.log("clicked reset");
+                plot.selectAll("rect").attr("fill", function(d, j) {
+                  if (outputObj2.avgresp[j] > 12) {
+                    return color(outputObj2.avgresp[j])
+                  }
+                  else {
+                    return color2(outputObj2.avgresp[j])
+                  }
+                });
+              })
 
         svg.append("text")
           .attr("transform",

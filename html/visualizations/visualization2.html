@@ -12,6 +12,18 @@
       min-width: 80px;
       height: auto;
       background: none repeat scroll 0 0 #ffffff;
+      border: 1px solid red;
+      padding: 14px;
+      text-align: center;
+    }
+    .resetDiv {
+      position: absolute;
+      display: none;
+      left: 0;
+      top: 0;
+      min-width: 80px;
+      height: auto;
+      background: none repeat scroll 0 0 #ffffff;
       border: 1px solid #6F257F;
       padding: 14px;
       text-align: center;
@@ -109,11 +121,17 @@
     </section>
 
     <section class="section">
+
       <div class="container content">
         <h2 class="content_title">Prototypes</h2>
         <h2 class="content_title">Visualization</h2>
-        <svg class="chart1" width="100%" height="600" style="background-color: whitesmoke; border: 1px solid black;">
-      </svg>
+        <div class="reset">
+          <input style="margin-bottom: 0px;margin-left:0px"; type="button" value="Reset Visualization"/>
+        </div>
+        <div>
+          <input class="lowerData" style="margin-bottom: 0px;margin-left:0px"; type="button" value="View Green Bar Range"/>
+        </div>
+        <svg class="chart1" width="100%" height="600" style="background-color: whitesmoke; border: 1px solid black;"></svg>
         <h2 class="content_title">Interpretation</h2>
         <h2 class="content_title">Discussion</h2>
       </div>
