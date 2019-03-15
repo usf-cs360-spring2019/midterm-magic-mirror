@@ -205,19 +205,19 @@ var drawBarChart2 = function() {
               })
 
 
-        // svg.append("text")
-        //   .attr("transform",
-        //     "translate(" + (130) + " ," +
-        //                    (10 + margin.top) + ")")
-        //   .style("text-anchor", "middle")
-        //   .text("Incident Category");
+        svg.append("text")
+          .attr("transform",
+            "translate(" + (130) + " ," +
+                           (10 + margin.top) + ")")
+          .style("text-anchor", "middle")
+          .text("Incident Category");
 
-          // svg.append("text")
-          //   .attr("transform",
-          //     "translate(" + (plotWidth/2) + " ," +
-          //                    (390) + ")")
-          //   .style("text-anchor", "middle")
-          //   .text("Number of Records");
+          svg.append("text")
+            .attr("transform",
+              "translate(" + (plotWidth - 250) + " ," +
+                             (590) + ")")
+            .style("text-anchor", "middle")
+            .text("Average Response Time (minutes)");
 
           var loadLowerRange = function() {
             console.log("in loadLowerRange 1");
