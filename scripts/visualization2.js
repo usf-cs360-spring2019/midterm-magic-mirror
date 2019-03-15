@@ -186,7 +186,6 @@ var drawBarChart2 = function() {
                 console.log("clicked reset");
                 responsetime.domain([0, countMax]);
                 svg.select("xAxis")
-                  .transition().duration(1500)
                   .call(xAxis);
                 plot.selectAll("rect")
                   .attr("fill", function(d, j) {
@@ -197,12 +196,12 @@ var drawBarChart2 = function() {
                       return color2(outputObj2.avgresp[j])
                     }
                   })
-                  .attr("width", function(d, k) {
+                  .transition().attr("width", function(d, k) {
                     console.log(k);
                     console.log(outputObj2.avgresp[k]);
                   return responsetime(outputObj2.avgresp[k]);
                 });
-                plot.select("g#x-axisChart2").call(xAxis);
+                plot.transition().select("g#x-axisChart2").call(xAxis);
               })
 
 
@@ -224,10 +223,9 @@ var drawBarChart2 = function() {
             console.log("in loadLowerRange 1");
             responsetime.domain([0, 6]).nice();
             svg.select("xAxis")
-              .transition()
               .call(xAxis);
             plot.selectAll("rect")
-              .attr("width", function(d, i) {
+              .transition().attr("width", function(d, i) {
                 if (outputObj2.avgresp[i] > 12) {
                   return 0;
                 }
@@ -237,6 +235,6 @@ var drawBarChart2 = function() {
 
               //return responsetime(outputObj2.avgresp[i]);
             });
-            plot.select("g#x-axisChart2").call(xAxis);
+            plot.transition().select("g#x-axisChart2").call(xAxis);
           }
 }
