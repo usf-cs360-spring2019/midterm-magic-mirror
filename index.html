@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  
   <title>Magic Mirror</title>
   <!-- bulma 0.7.2 and font awesome v5.7.1 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
@@ -26,101 +26,102 @@
         <h2 class="subtitle">
           by Magic Mirror Group
         </h2>
-
+        
       </div>
     </div>
-
+    
     <!-- Header button -->
     <div class="hero-foot">
       <div class="container">
         <nav class="navbar" role="navigation" aria-label="main navigation">
-
-          <div class="navbar-brand">
-            <a class="navbar-item" href="#top">
+          
+          <div id="main-navbar" class="navbar-menu">
+            <a class="navbar-item" href="index.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span><a href="index.html">Home</a></span>
+              <span>
+                Home
+              </span>
             </a>
-          </div>
-
-          <div id="main-navbar" class="navbar-menu">
+            
             <a class="navbar-item" href="html/data_and_processing.html">
               <span class="icon">
                 <i class="fas fa-chart-area"></i>
               </span>
               <span>Data and Procesing</span>
             </a>
-
+            
             <!-- visualizations -->
             <ul class="nav navbar-nav">
-              <li  class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <li class="dropdown">
+                <a data-toggle="dropdown">
                   <span class="icon">
                     <i class="fas fa-chart-area"></i>
                   </span>
-
-                  Visualizations</a>
-
-                  <ul  class="dropdown-menu" style="color: red">
-                    <li role="separator" class="divider"></li>
-                    <li><a href="html/visualizations/visualization1.html">Visualization 1</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="html/visualizations/visualization2.html">Visualization 2</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="html/visualizations/visualization3.html">Visualization 3</a></li>
-                  </ul>
-                </li>
-              </ul>
-
-              <a class="navbar-item" href="html/prototypes.html">
-                <span class="icon">
-                  <i class="fas fa-chart-area"></i>
-                </span>
-                <span>Prototypes</span>
-              </a>
-            </div>
-
-            <div class="navbar-end">
-              <a class="navbar-item" href="html/about.html">
-                <span class="icon">
-                  <i class="fas fa-info-circle"></i>
-                </span>
-                <span>Team/About</span>
-              </a>
-            </div>
-          </nav>
-        </div>
+                  <span>
+                    Visualizations
+                  </span>
+                </a>
+                
+                <ul class="dropdown-menu" style="color: red">
+                  <li><a href="html/visualizations/visualization1.html">Visualization 1</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="html/visualizations/visualization2.html">Visualization 2</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="html/visualizations/visualization3.html">Visualization 3</a></li>
+                </ul>
+              </li>
+            </ul>
+            
+            <a class="navbar-item" href="html/prototypes.html">
+              <span class="icon">
+                <i class="fas fa-chart-area"></i>
+              </span>
+              <span>Prototypes</span>
+            </a>
+          </div>
+          
+          <div class="navbar-end">
+            <a class="navbar-item" href="html/about.html">
+              <span class="icon">
+                <i class="fas fa-info-circle"></i>
+              </span>
+              <span>Team/About</span>
+            </a>
+          </div>
+        </nav>
       </div>
-    </section>
-
+    </div>
+  </section>
+  
   <section class="section">
     <div class="container content">
       <h2 class="content_title">Theme</h2>
       <p>Our high level objective is to use data relating to the San Francisco Fire Department
-         to create visualizations to reveal trends or interesting statistics. The theme
-         for our project is that the number of call types for a category relates to
-         the reduction in the average response time for that call type. Essentially, the
-         San Francisco Fire Department has increased their efficiency on the most common
-         calls they receive. Additionally, we show the most common calls in the most
-         well known neighborhoods of San Francisco. Navigate to our prototypes
-         section to see interesting graphs and interesting findings!</p>
-    </div>
-
-    <!--
-    <div class="container content">
-        <h2 class="content_title">Color Theme</h2>
-        <h5 style="color:magenta">magenta #FF00FF</h5>
-        <h5 style="color:orangered">orangered #FF4500</h5>
-        <h5 style="color:darksalmon">darksalmon #E9967A</h5>
-        <h5 style="color:khaki">khaki #FAF0E6</h5>
-    </div>
-  -->
-  </section>
-
+        to create visualizations to reveal trends or interesting statistics. The theme
+        for our project is that the number of call types for a category relates to
+        the reduction in the average response time for that call type. Essentially, the
+        San Francisco Fire Department has increased their efficiency on the most common
+        calls they receive. Additionally, we show the most common calls in the most
+        well known neighborhoods of San Francisco. Navigate to our prototypes
+        section to see interesting graphs and interesting findings!</p>
+      </div>
+      
+      <!--
+        <div class="container content">
+          <h2 class="content_title">Color Theme</h2>
+          <h5 style="color:magenta">magenta #FF00FF</h5>
+          <h5 style="color:orangered">orangered #FF4500</h5>
+          <h5 style="color:darksalmon">darksalmon #E9967A</h5>
+          <h5 style="color:khaki">khaki #FAF0E6</h5>
+        </div>
+      -->
+    </section>
+    
     <!-- separator between sections -->
     <hr class="container">
-
+    
     <!-- footer -->
     <footer class="footer">
       <div class="content has-text-centered">
@@ -143,3 +144,4 @@
     <!-- end body and html -->
   </body>
   </html>
+  
