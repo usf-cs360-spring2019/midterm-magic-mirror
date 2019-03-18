@@ -50,6 +50,7 @@ var drawBarChart2 = function() {
   var tooltip = d3.select("body").append("div").attr("class", "toolTip");
   var reset = d3.select("body").select("section.section").select("div").select("div.reset");
   var viewLowerData = d3.select("body").select("section.section").select("div").select("div.lowerData");
+  var topFive = d3.select("body").select("section.section").select("div").select("div.fiveCommon");
   //var viewLowerData = d3.select("body").select("section.section").select("div").select("div.lowerData").select("input");
   let countMin = 0;
   let countMax = 45;
@@ -204,6 +205,26 @@ var drawBarChart2 = function() {
                 plot.transition().select("g#x-axisChart2").call(xAxis);
               })
 
+               topFive.on("click", function (d, i) {
+                 console.log("clicked topfive");
+                 plot.selectAll("rect").attr("fill", function(d, j) {
+                   console.log("counting");
+                    if (outputObj2.calltype[19 - j] == "Medical Incident" || outputObj2.calltype[19 - j] == "Alarms"
+                        || outputObj2.calltype[19 - j] == "Structure Fire" || outputObj2.calltype[19 - j] == "Traffic Collision"
+                        || outputObj2.calltype[19 - j] == "Citizen Assist/Service Call") {
+                          console.log(19 - j)
+                          if (outputObj2.avgresp[j] > 12) {
+                            return color(outputObj2.avgresp[j])
+                          }
+                          else {
+                            return color2(outputObj2.avgresp[j])
+                          }
+                    }
+                    else {
+                      return "gray"
+                    }
+                 });
+               })
 
         svg.append("text")
           .attr("transform",
