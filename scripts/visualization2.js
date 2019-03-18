@@ -207,7 +207,7 @@ var drawBarChart2 = function() {
 
                topFive.on("click", function (d, i) {
                  console.log("clicked topfive");
-                 plot.selectAll("rect").attr("fill", function(d, j) {
+                 plot.transition().selectAll("rect").attr("fill", function(d, j) {
                    console.log("counting");
                     if (outputObj2.calltype[19 - j] == "Medical Incident" || outputObj2.calltype[19 - j] == "Alarms"
                         || outputObj2.calltype[19 - j] == "Structure Fire" || outputObj2.calltype[19 - j] == "Traffic Collision"
