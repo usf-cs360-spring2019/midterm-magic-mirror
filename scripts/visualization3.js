@@ -167,13 +167,13 @@ margin = {top: 30,
             
             status1.text("Call Type: " + d['Call Type']);
             status2.text("Neighborhooods: " + d['Neighborhooods - Analysis Boundaries']);
-            status3.text("Average: " + d['Avg. Response Time(mins)']);
+            status3.text("Average Response Time: " + d['Avg. Response Time(mins)']);
         });
         
         rects.on("mouseout.highlight", function(d) {
             d3.select(this).style("stroke", null);
             status1.text("Call Type: ");
             status2.text("Neighborhooods: ");
-            status3.text("Average: ");
+            status3.text("Average Response Time: ");
         });
     })
