@@ -1,165 +1,137 @@
 ﻿Call Type,Neighborhooods - Analysis Boundaries,Avg. Response Time(mins)
-Traffic Collision,Western Addition,6.923293453
-Structure Fire,Western Addition,6.883994851
-Alarms,Western Addition,5.546696369
-Medical Incident,Western Addition,8.359129222
-Traffic Collision,West of Twin Peaks,8.594530490
-Structure Fire,West of Twin Peaks,9.222126572
-Alarms,West of Twin Peaks,6.929485789
-Medical Incident,West of Twin Peaks,9.428984459
-Traffic Collision,Visitacion Valley,9.402714646
-Structure Fire,Visitacion Valley,10.113260040
-Alarms,Visitacion Valley,8.209500299
-Medical Incident,Visitacion Valley,10.532921716
-Traffic Collision,Twin Peaks,8.797144075
-Structure Fire,Twin Peaks,10.701613085
-Alarms,Twin Peaks,7.944911047
-Medical Incident,Twin Peaks,10.517241379
-Traffic Collision,Treasure Island,14.655336105
-Structure Fire,Treasure Island,18.107982120
-Alarms,Treasure Island,8.401917865
-Medical Incident,Treasure Island,12.379856642
-Traffic Collision,Tenderloin,7.117080016
-Structure Fire,Tenderloin,6.379768640
-Alarms,Tenderloin,5.945349884
-Medical Incident,Tenderloin,8.693453285
-Traffic Collision,Sunset/Parkside,8.628427439
-Structure Fire,Sunset/Parkside,8.749666694
-Alarms,Sunset/Parkside,7.027968985
-Medical Incident,Sunset/Parkside,9.433068494
-Traffic Collision,South of Market,8.133213502
-Structure Fire,South of Market,7.766935453
-Alarms,South of Market,6.048393562
-Medical Incident,South of Market,9.085371793
-Traffic Collision,Seacliff,9.553080569
-Structure Fire,Seacliff,11.526205904
-Alarms,Seacliff,6.974786915
-Medical Incident,Seacliff,9.821530418
-Traffic Collision,Russian Hill,7.553127327
-Structure Fire,Russian Hill,7.890619042
-Alarms,Russian Hill,6.701244253
-Medical Incident,Russian Hill,8.842563846
-Traffic Collision,Presidio Heights,7.159457302
-Structure Fire,Presidio Heights,8.942522209
-Alarms,Presidio Heights,6.229688021
-Medical Incident,Presidio Heights,8.619483353
-Traffic Collision,Presidio,12.25
-Structure Fire,Presidio,15.159311224
-Alarms,Presidio,7.555784621
-Medical Incident,Presidio,10.547544243
-Traffic Collision,Potrero Hill,9.521302221
-Structure Fire,Potrero Hill,8.261319773
-Alarms,Potrero Hill,6.948491300
-Medical Incident,Potrero Hill,9.035333534
-Traffic Collision,Portola,10.038773585
-Structure Fire,Portola,8.728808469
-Alarms,Portola,6.853299320
-Medical Incident,Portola,9.302594453
-Traffic Collision,Pacific Heights,6.838114805
-Structure Fire,Pacific Heights,7.027181857
-Alarms,Pacific Heights,5.848704779
-Medical Incident,Pacific Heights,8.326477683
-Traffic Collision,Outer Richmond,7.825905090
-Structure Fire,Outer Richmond,8.489857846
-Alarms,Outer Richmond,6.747391141
-Medical Incident,Outer Richmond,9.114543815
-Traffic Collision,Outer Mission,8.998050562
-Structure Fire,Outer Mission,7.151249256
-Alarms,Outer Mission,6.612728843
-Medical Incident,Outer Mission,9.353029965
-Traffic Collision,Oceanview/Merced/Ingleside,9.962117482
-Structure Fire,Oceanview/Merced/Ingleside,9.167795294
-Alarms,Oceanview/Merced/Ingleside,6.930556901
-Medical Incident,Oceanview/Merced/Ingleside,9.578067893
-Traffic Collision,North Beach,8.323062678
-Structure Fire,North Beach,8.388922306
-Alarms,North Beach,6.788038723
-Medical Incident,North Beach,9.476983122
-Traffic Collision,Noe Valley,7.997416279
-Structure Fire,Noe Valley,7.303045021
-Alarms,Noe Valley,6.238041824
-Medical Incident,Noe Valley,8.842610952
-Traffic Collision,Nob Hill,6.504857531
-Structure Fire,Nob Hill,6.582139313
-Alarms,Nob Hill,5.814750792
-Medical Incident,Nob Hill,8.216089185
-Traffic Collision,Mission Bay,8.269349978
-Structure Fire,Mission Bay,21.700017612
-Alarms,Mission Bay,6.320061804
-Medical Incident,Mission Bay,10.094824687
-Traffic Collision,Mission,7.032855024
-Structure Fire,Mission,7.715291766
-Alarms,Mission,6.048862830
-Medical Incident,Mission,8.280106923
-Traffic Collision,McLaren Park,10.135763889
-Structure Fire,McLaren Park,9.869674185
-Alarms,McLaren Park,8.268452381
-Medical Incident,McLaren Park,10.567970250
-Traffic Collision,Marina,7.913412844
-Structure Fire,Marina,7.309380663
-Alarms,Marina,6.642860765
-Medical Incident,Marina,9.231418971
-Traffic Collision,Lone Mountain/USF,7.031657920
-Structure Fire,Lone Mountain/USF,8.737035031
-Alarms,Lone Mountain/USF,6.383999314
-Medical Incident,Lone Mountain/USF,8.645312828
-Traffic Collision,Lincoln Park,8.087373737
-Structure Fire,Lincoln Park,10.566913580
-Alarms,Lincoln Park,4.631251807
-Medical Incident,Lincoln Park,11.070384983
-Traffic Collision,Lakeshore,9.805105912
-Structure Fire,Lakeshore,10.670820945
-Alarms,Lakeshore,7.302083946
-Medical Incident,Lakeshore,11.114441237
-Traffic Collision,Japantown,7.603920664
-Structure Fire,Japantown,5.583929605
-Alarms,Japantown,5.704130315
-Medical Incident,Japantown,8.786463644
-Traffic Collision,Inner Sunset,7.556973012
-Structure Fire,Inner Sunset,9.217620760
-Alarms,Inner Sunset,6.588338187
-Medical Incident,Inner Sunset,8.774263899
-Traffic Collision,Inner Richmond,7.771856800
-Structure Fire,Inner Richmond,9.348400323
-Alarms,Inner Richmond,6.534679429
-Medical Incident,Inner Richmond,8.238214423
-Traffic Collision,Hayes Valley,7.242962963
-Structure Fire,Hayes Valley,6.827715256
-Alarms,Hayes Valley,5.863869343
-Medical Incident,Hayes Valley,8.446135502
-Traffic Collision,Haight Ashbury,6.597772322
-Structure Fire,Haight Ashbury,8.707426355
-Alarms,Haight Ashbury,6.566279894
-Medical Incident,Haight Ashbury,8.345113739
-Traffic Collision,Golden Gate Park,8.151675978
-Structure Fire,Golden Gate Park,9.292
-Alarms,Golden Gate Park,7.248047619
-Medical Incident,Golden Gate Park,9.362368796
-Traffic Collision,Glen Park,8.591285956
-Structure Fire,Glen Park,11.042427568
-Alarms,Glen Park,6.717269595
-Medical Incident,Glen Park,9.989482557
-Traffic Collision,Financial District/South Beach,8.665981092
-Structure Fire,Financial District/South Beach,6.788994034
-Alarms,Financial District/South Beach,6.373759626
-Medical Incident,Financial District/South Beach,9.576706809
-Traffic Collision,Excelsior,8.473411220
-Structure Fire,Excelsior,7.774993288
-Alarms,Excelsior,6.940625943
-Medical Incident,Excelsior,9.304759827
-Traffic Collision,Chinatown,6.662241239
-Structure Fire,Chinatown,7.256103334
-Alarms,Chinatown,5.501403267
-Medical Incident,Chinatown,8.849908699
-Traffic Collision,Castro/Upper Market,6.715608003
-Structure Fire,Castro/Upper Market,7.892353817
-Alarms,Castro/Upper Market,6.243795620
-Medical Incident,Castro/Upper Market,8.584128369
-Traffic Collision,Bernal Heights,9.574287485
-Structure Fire,Bernal Heights,10.060166917
-Alarms,Bernal Heights,6.666950142
-Medical Incident,Bernal Heights,9.154216427
-Traffic Collision,Bayview Hunters Point,9.271528285
-Structure Fire,Bayview Hunters Point,11.575519906
-Alarms,Bayview Hunters Point,7.118945504
-Medical Incident,Bayview Hunters Point,9.451623493
+Traffic Collision,Western Addition,7.088888889
+Structure Fire,Western Addition,5.429761905
+Alarms,Western Addition,6.397740113
+Medical Incident,Western Addition,9.679432624
+Traffic Collision,West of Twin Peaks,12.951388889
+Structure Fire,West of Twin Peaks,8.889772727
+Alarms,West of Twin Peaks,7.767231638
+Medical Incident,West of Twin Peaks,10.145953142
+Traffic Collision,Twin Peaks,6.9875
+Structure Fire,Twin Peaks,7.383333333
+Alarms,Twin Peaks,7.659803922
+Medical Incident,Twin Peaks,10.840811966
+Traffic Collision,Treasure Island,26.127083333
+Structure Fire,Treasure Island,3.609722222
+Alarms,Treasure Island,7.01
+Medical Incident,Treasure Island,10.415372168
+Traffic Collision,Tenderloin,7.467129630
+Structure Fire,Tenderloin,5.662536873
+Alarms,Tenderloin,6.424867725
+Medical Incident,Tenderloin,9.270276274
+Traffic Collision,Sunset/Parkside,10.735632184
+Structure Fire,Sunset/Parkside,7.442261905
+Alarms,Sunset/Parkside,8.367901235
+Medical Incident,Sunset/Parkside,10.592373821
+Traffic Collision,South of Market,7.567521368
+Structure Fire,South of Market,5.295441595
+Alarms,South of Market,5.893543544
+Medical Incident,South of Market,9.915557648
+Traffic Collision,Russian Hill,8.1
+Structure Fire,Russian Hill,5.733333333
+Alarms,Russian Hill,7.415090090
+Medical Incident,Russian Hill,9.671675302
+Traffic Collision,Presidio Heights,8.322222222
+Structure Fire,Presidio Heights,5.775
+Alarms,Presidio Heights,5.998958333
+Medical Incident,Presidio Heights,7.782911392
+Traffic Collision,Presidio,10.37
+Structure Fire,Presidio,7.81875
+Alarms,Presidio,8.323809524
+Medical Incident,Presidio,9.782352941
+Traffic Collision,Potrero Hill,12.321428571
+Structure Fire,Potrero Hill,9.300877193
+Alarms,Potrero Hill,7.373493976
+Medical Incident,Potrero Hill,8.915817901
+Traffic Collision,Portola,12.972549020
+Structure Fire,Portola,5.241666667
+Alarms,Portola,4.883333333
+Medical Incident,Portola,10.329629630
+Traffic Collision,Pacific Heights,5.380555556
+Structure Fire,Pacific Heights,5.953900709
+Alarms,Pacific Heights,5.901884058
+Medical Incident,Pacific Heights,8.425207297
+Traffic Collision,Outer Richmond,5.934375
+Structure Fire,Outer Richmond,6.301709402
+Alarms,Outer Richmond,6.452941176
+Medical Incident,Outer Richmond,10.073698630
+Traffic Collision,Outer Mission,11.744202899
+Structure Fire,Outer Mission,34.136
+Alarms,Outer Mission,6.425641026
+Medical Incident,Outer Mission,9.940703518
+Traffic Collision,Oceanview/Merced/Ingleside,10.255
+Structure Fire,Oceanview/Merced/Ingleside,8.613829787
+Alarms,Oceanview/Merced/Ingleside,7.168518519
+Medical Incident,Oceanview/Merced/Ingleside,10.088858195
+Traffic Collision,North Beach,12.573333333
+Structure Fire,North Beach,3.05
+Alarms,North Beach,7.181
+Medical Incident,North Beach,9.801754386
+Traffic Collision,Noe Valley,7.175
+Structure Fire,Noe Valley,5.13125
+Alarms,Noe Valley,6.286666667
+Medical Incident,Noe Valley,8.466516517
+Traffic Collision,Nob Hill,4.59
+Structure Fire,Nob Hill,3.934420290
+Alarms,Nob Hill,5.930894309
+Medical Incident,Nob Hill,9.166622807
+Traffic Collision,Mission,5.933333333
+Structure Fire,Mission,5.634415584
+Alarms,Mission,6.732539683
+Medical Incident,Mission,8.933369022
+Traffic Collision,Marina,7.279166667
+Structure Fire,Marina,6.211842105
+Alarms,Marina,7.351476793
+Medical Incident,Marina,11.185284553
+Traffic Collision,Lakeshore,9.875
+Structure Fire,Lakeshore,10.770370370
+Alarms,Lakeshore,6.335593220
+Medical Incident,Lakeshore,11.287096774
+Traffic Collision,Inner Sunset,5.4875
+Structure Fire,Inner Sunset,9.674242424
+Alarms,Inner Sunset,6.943181818
+Medical Incident,Inner Sunset,9.432812500
+Traffic Collision,Inner Richmond,11.895454545
+Structure Fire,Inner Richmond,7.616666667
+Alarms,Inner Richmond,7.605882353
+Medical Incident,Inner Richmond,9.371688034
+Traffic Collision,Hayes Valley,7.870689655
+Structure Fire,Hayes Valley,4.843495935
+Alarms,Hayes Valley,6.584013605
+Medical Incident,Hayes Valley,8.578998779
+Traffic Collision,Haight Ashbury,3.681818182
+Structure Fire,Haight Ashbury,5.459920635
+Alarms,Haight Ashbury,6.255902778
+Medical Incident,Haight Ashbury,8.637962963
+Traffic Collision,Golden Gate Park,9.633333333
+Structure Fire,Golden Gate Park,4.466666667
+Alarms,Golden Gate Park,6.880555556
+Medical Incident,Golden Gate Park,8.992473118
+Traffic Collision,Glen Park,7.4
+Structure Fire,Glen Park,6.373611111
+Alarms,Glen Park,7.085897436
+Medical Incident,Glen Park,8.940449438
+Traffic Collision,Financial District/South Beach,10.035964912
+Structure Fire,Financial District/South Beach,6.151149425
+Alarms,Financial District/South Beach,7.069444444
+Medical Incident,Financial District/South Beach,10.547667062
+Traffic Collision,Excelsior,8.701282051
+Structure Fire,Excelsior,4.86
+Alarms,Excelsior,6.481372549
+Medical Incident,Excelsior,10.284298908
+Traffic Collision,Chinatown,4.361111111
+Structure Fire,Chinatown,6.953703704
+Alarms,Chinatown,6.634090909
+Medical Incident,Chinatown,10.364265537
+Traffic Collision,Castro/Upper Market,4.12
+Structure Fire,Castro/Upper Market,3.916666667
+Alarms,Castro/Upper Market,6.819767442
+Medical Incident,Castro/Upper Market,9.669726776
+Traffic Collision,Bernal Heights,7.937121212
+Structure Fire,Bernal Heights,7.026811594
+Alarms,Bernal Heights,7.228846154
+Medical Incident,Bernal Heights,11.190501792
+Traffic Collision,Bayview Hunters Point,10.47875
+Structure Fire,Bayview Hunters Point,9.15
+Alarms,Bayview Hunters Point,7.702579365
+Medical Incident,Bayview Hunters Point,10.304486285

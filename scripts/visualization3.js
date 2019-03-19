@@ -60,7 +60,7 @@ margin = {top: 30,
         
         // Build color scale
         var color = d3.scaleLinear()
-        .domain([4.63, 9, 21.70])
+        .domain([3.05, 10, 34.14])
         .range(["#039B0A","#FFCB28", "#D40000"]);
         // console.log(color(1600));
         // console.log(color(1900));
@@ -92,7 +92,7 @@ margin = {top: 30,
         .append("rect")
         .attr("x", d => (x(d['Neighborhooods - Analysis Boundaries'])))
         .attr("y", d => (y(d['Call Type'])))
-        .attr("width", 22)
+        .attr("width", 25.5)
         .attr("height", 62)
         .style("fill", d => (color(d['Avg. Response Time(mins)'])));
         
@@ -140,14 +140,14 @@ margin = {top: 30,
         .style('font-family', 'Helvetica');
         
         plot2.append('text')
-        .text('4.63')
+        .text('3.05')
         .attr('x', 20)
         .attr('y', 25)
         .style("font-size", "10px")
         .style('font-family', 'Helvetica');
         
         plot2.append('text')
-        .text('21.70')
+        .text('34.14')
         .attr('x', 140)
         .attr('y', 25)
         .style("font-size", "10px")
