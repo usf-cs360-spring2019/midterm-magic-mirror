@@ -290,19 +290,12 @@ var drawBarChart2 = function() {
                   .range([0, 125])
 
                 let colorAxis = d3.axisTop(colorScaleAxis)
-                                .ticks(1);
+                                .ticks(5);
 
                 svg.append('g')
                   .call(colorAxis)
                   .attr('transform', `translate(${plotWidth + 80},20)`);
 
-                  svg.append('g')
-                    .attr("transform", `translate(0,${height - margin.bottom - barHeight})`)
-                    .append("rect")
-                    .attr('transform', `translate(${margin.left}, 0)`)
-                	.attr("width", width - margin.right - margin.left)
-                	.attr("height", barHeight)
-                	.style("fill", "url(#linear-gradient)");
                 colorScale = d3.scaleSequential(d3.interpolatePiYG).domain([0, 42]);
 
                 // axisScale = d3.scaleLinear()
@@ -322,5 +315,46 @@ var drawBarChart2 = function() {
               //
               //   return svg.node();
           }
+
+          var drawLegend2 = function() {
+            console.log("in drawLegend");
+            //const svg = d3.select(DOM.svg(width, height));
+            const defs2 = svg.append("defs");
+
+            const linearGradient2 = defs2.append("linearGradient")
+                .attr("id", "linear-gradient2");
+
+            colorScale2 = d3.scaleSequential(d3.interpolate("#ccffcc", "#004d00"));
+            barHeight2 = 20
+
+            linearGradient2.selectAll("stop")
+              .data(colorScale2.ticks().map((t, i, n) => ({ offset: `${100*i/n.length}%`, color: colorScale2(t) })))
+              .enter().append("stop")
+              .attr("offset", d => d.offset)
+              .attr("stop-color", d => d.color);
+
+            svg.append('g')
+              .attr('transform', `translate(625,20)`)
+              .append("rect")
+              .attr('transform', `translate(${plotWidth - 700}, 0)`)
+            .attr("width", 125)
+            .attr("height", barHeight2)
+            .style("fill", "url(#linear-gradient2)");
+
+            let colorScaleAxis2 = d3.scaleLinear()
+              .domain([0, 6])
+              .range([0, 125])
+
+
+
+            let colorAxis2 = d3.axisTop(colorScaleAxis2)
+                            .ticks(3);
+
+            svg.append('g')
+              .call(colorAxis2)
+              .attr('transform', `translate(${plotWidth - 75},20)`);
+
+          }
           drawLegend();
+          drawLegend2();
 }
