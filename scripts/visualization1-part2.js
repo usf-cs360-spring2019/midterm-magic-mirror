@@ -305,6 +305,9 @@ svg.append("line")
               .style("fill", "Black")
               .text(y)
 
+
+
+
             d3.selectAll("#"+id1)
             .attr("stroke-width", 4)
             .attr('fill-opacity', 1)
@@ -322,11 +325,20 @@ svg.append("line")
             .attr('fill-opacity', 1)
             .attr('stroke-opacity', 2);
 
+            // svg
+            // .transition()
+            // .duration(function(d,i){
+            //   return 100*i;
+            // })
+            // .style('background-color', 'purple')
+
 
           }).on("mouseout", function(d){
             let id3 = d3.select(this).attr("id");
             let id2 = id3.substring(1);
             let id1 = id3.substring(2);
+
+
 
              d3.selectAll("#"+id1)
             .attr("stroke-width", 0.8)

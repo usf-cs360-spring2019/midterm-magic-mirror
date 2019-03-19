@@ -137,16 +137,24 @@ g2.append("g").append('rect')
   let color = d3.select(this).attr('fill');
   g1.selectAll("path")
   .style('opacity', '0.2')
+  .transition()
   .filter(function(d){
     return d3.select(this).attr('fill') == color;
   }).attr("stroke", "purple")
   .attr("stroke-width", 2)
+  .transition()
+  .duration(function(d,i){
+    return 100*i;
+  })
   .style('opacity', '1')
-  .transition();
-  }).on('mouseout', function(d){
+    }).on('mouseout', function(d){
   g1.selectAll("path")
   .attr("stroke", "black")
   .attr("stroke-width", 0.1)
+  .transition()
+  .duration(function(d,i){
+    return 100*i;
+  })
   .style('opacity', '1')
 })
 g2.append("text")
