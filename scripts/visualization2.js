@@ -45,8 +45,11 @@ var color = d3.scaleLinear()
 var color2 = d3.scaleLinear()
     .domain([1, 6])
     .range(["#ccffcc", "#004d00"]);
+/*-------------------------*/
 
+/*-------------------------*/
 var drawBarChart2 = function() {
+
   var tooltip = d3.select("body").append("div").attr("class", "toolTip");
   var reset = d3.select("body").select("section.section").select("div").select("div.reset");
   var viewLowerData = d3.select("body").select("section.section").select("div").select("div.lowerData");
@@ -109,8 +112,6 @@ var drawBarChart2 = function() {
             else {
               plot.select("g#y-axisChart2").call(yAxis);
             }
-
-
 
             let bars2 = plot.selectAll("rect")
               .data(outputObj2.calltype);
@@ -210,8 +211,7 @@ var drawBarChart2 = function() {
                  plot.transition().selectAll("rect").attr("fill", function(d, j) {
                    console.log("counting");
                     if (outputObj2.calltype[19 - j] == "Medical Incident" || outputObj2.calltype[19 - j] == "Alarms"
-                        || outputObj2.calltype[19 - j] == "Structure Fire" || outputObj2.calltype[19 - j] == "Traffic Collision"
-                        || outputObj2.calltype[19 - j] == "Citizen Assist/Service Call") {
+                        || outputObj2.calltype[19 - j] == "Structure Fire" || outputObj2.calltype[19 - j] == "Traffic Collision") {
                           console.log(19 - j)
                           if (outputObj2.avgresp[j] > 12) {
                             return color(outputObj2.avgresp[j])
@@ -257,5 +257,70 @@ var drawBarChart2 = function() {
               //return responsetime(outputObj2.avgresp[i]);
             });
             plot.transition().select("g#x-axisChart2").call(xAxis);
+
           }
+
+          var drawLegend = function() {
+                console.log("in drawLegend");
+                //const svg = d3.select(DOM.svg(width, height));
+                const defs = svg.append("defs");
+
+                const linearGradient = defs.append("linearGradient")
+                    .attr("id", "linear-gradient");
+
+                colorScale = d3.scaleSequential(d3.interpolate("#ff8080", "#ff0000"));
+                barHeight = 20
+
+                linearGradient.selectAll("stop")
+                  .data(colorScale.ticks().map((t, i, n) => ({ offset: `${100*i/n.length}%`, color: colorScale(t) })))
+                  .enter().append("stop")
+                  .attr("offset", d => d.offset)
+                  .attr("stop-color", d => d.color);
+
+                svg.append('g')
+                  .attr('transform', `translate(780,20)`)
+                  .append("rect")
+                  .attr('transform', `translate(${plotWidth - 700}, 0)`)
+              	.attr("width", 125)
+              	.attr("height", barHeight)
+              	.style("fill", "url(#linear-gradient)");
+
+                let colorScaleAxis = d3.scaleLinear()
+                  .domain([12.62, 43.2])
+                  .range([0, 125])
+
+                let colorAxis = d3.axisTop(colorScaleAxis)
+                                .ticks(1);
+
+                svg.append('g')
+                  .call(colorAxis)
+                  .attr('transform', `translate(${plotWidth + 80},20)`);
+
+                  svg.append('g')
+                    .attr("transform", `translate(0,${height - margin.bottom - barHeight})`)
+                    .append("rect")
+                    .attr('transform', `translate(${margin.left}, 0)`)
+                	.attr("width", width - margin.right - margin.left)
+                	.attr("height", barHeight)
+                	.style("fill", "url(#linear-gradient)");
+                colorScale = d3.scaleSequential(d3.interpolatePiYG).domain([0, 42]);
+
+                // axisScale = d3.scaleLinear()
+                //   .domain(colorScale.domain())
+                //   .range([12.62, plotWidth - margin.right]);
+
+                  // colorAxis = g => g
+                  //   .attr("class", `x-axis`)
+                  //   .attr("transform", `translate(780,10)`)
+                  //   .call(d3.axisTop(colorAxis)
+                  //   .ticks(5)
+                  //   .tickSize(-barHeight))
+
+              // margin = ({top: 20, right: 40, bottom: 30, left: 40})
+              //
+              // height = 100
+              //
+              //   return svg.node();
+          }
+          drawLegend();
 }
