@@ -35,11 +35,16 @@ margin = {top: 30,
         .domain(columns)
         .padding(0.05);
         
-        // svg.append('g')
-        //     .style("font-size", 15)
-        //     .attr("transform", "translate(0," + plot_height + ")")
-        //     .call(d3.axisBottom(x).tickSize(0))
-        //     .select(".domain").remove();
+        svg.append('g')
+            .style("font-size", 15)
+            .attr("transform", "translate(100,320)")
+            .call(d3.axisBottom(x).tickSize(0))
+            // .select(".domain").remove()
+                .selectAll("text")
+                    .style("text-anchor", "end")
+                    .attr("dx", "-.8em")
+                    .attr("dy", ".15em")
+                    .attr("transform", "rotate(-65)");
         
         // Build Y scales and axis
         let y = d3.scaleBand()
@@ -93,7 +98,7 @@ margin = {top: 30,
         
         // Draw gradient bar
         let plot2 = svg.append("g").attr("id", "plot2");
-        plot2.attr("transform", "translate(780, 320)");
+        plot2.attr("transform", "translate(780, 20)");
         
         var defs = svg.append("defs");
         
@@ -122,30 +127,30 @@ margin = {top: 30,
         // Paint gradient
         plot2.append("rect")
         .attr("width", 150)
-        .attr("height", 20)
+        .attr("height", 10)
         .attr("fill", "url(#svgGradient)")
         .attr("x", 20)
-        .attr("y", 10);
+        .attr("y", 5);
         
         plot2.append('text')
         .text('Avg. Res Times(mins)')
         .attr('x', 20)
         .attr('y', 0)
-        .style("font-size", "14px")
+        .style("font-size", "10px")
         .style('font-family', 'Helvetica');
         
         plot2.append('text')
         .text('4.63')
         .attr('x', 20)
-        .attr('y', 45)
-        .style("font-size", "12px")
+        .attr('y', 25)
+        .style("font-size", "10px")
         .style('font-family', 'Helvetica');
         
         plot2.append('text')
         .text('21.70')
         .attr('x', 140)
-        .attr('y', 45)
-        .style("font-size", "12px")
+        .attr('y', 25)
+        .style("font-size", "10px")
         .style('font-family', 'Helvetica');
         
         // Highlight
