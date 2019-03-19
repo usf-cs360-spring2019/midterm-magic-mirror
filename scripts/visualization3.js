@@ -165,9 +165,9 @@ margin = {top: 30,
             .style("stroke", "red")
             .style("stroke-width", 2);
             
-            status1.text("Call Type: " + d['Call Type']).style("font-size", "16px");
-            status2.text("Neighborhooods: " + d['Neighborhooods - Analysis Boundaries']).style("font-size", "16px");
-            status3.text("Average: " + d['Avg. Response Time(mins)']).style("font-size", "16px");
+            status1.text("Call Type: " + d['Call Type']);
+            status2.text("Neighborhooods: " + d['Neighborhooods - Analysis Boundaries']);
+            status3.text("Average: " + d['Avg. Response Time(mins)']);
         });
         
         rects.on("mouseout.highlight", function(d) {
