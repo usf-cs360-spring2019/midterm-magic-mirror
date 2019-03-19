@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <title>Magic Mirror</title>
     <!-- bulma 0.7.2 and font awesome v5.7.1 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
@@ -29,7 +29,7 @@
                 </h2>
             </div>
         </div>
-
+        
         <!-- header -->
         <div class="hero-foot">
             <div class="container">
@@ -41,14 +41,14 @@
                             </span>
                             <span>Home</span>
                         </a>
-
+                        
                         <a class="navbar-item" href="data_and_processing.html">
                             <span class="icon">
                                 <i class="fas fa-chart-area"></i>
                             </span>
                             <span>Data and Processing</span>
                         </a>
-
+                        
                         <!-- visualizations -->
                         <a class="navbar-item" href="visualizations/visualization1.html">
                             <span class="icon">
@@ -56,30 +56,30 @@
                             </span>
                             <span>Visualization 1</span>
                         </a>
-
+                        
                         <a class="navbar-item" href="visualizations/visualization2.html">
                             <span class="icon">
                                 <i class="fas fa-chart-area"></i>
                             </span>
                             <span>Visualization 2</span>
                         </a>
-
+                        
                         <a class="navbar-item" href="visualizations/visualization3.html">
                             <span class="icon">
                                 <i class="fas fa-chart-area"></i>
                             </span>
                             <span>Visualization 3</span>
                         </a>
-
+                        
                         <a class="navbar-item" href="prototypes.html">
                             <span class="icon">
                                 <i class="fas fa-chart-area"></i>
                             </span>
                             <span>Prototypes</span>
                         </a>
-
+                        
                     </div>
-
+                    
                     <div class="navbar-end">
                         <a class="navbar-item" href="about.html">
                             <span class="icon">
@@ -88,12 +88,12 @@
                             <span>Team/About</span>
                         </a>
                     </div>
-
+                    
                 </nav>
             </div>
         </div>
     </section>
-
+    
     <!-- Main content -->
     <section class="section">
         <div class="container content">
@@ -109,7 +109,7 @@
                 incident, structure fire, and assisting
                 police have very fast reponse times.
             </p>
-
+            
             <h2 class="content_title">Prototype 2</h2>
             <img src="../images/prototypes/num-calls-by-incident.png">
             <p>
@@ -120,7 +120,7 @@
                 structure fire calls. You can use prototype 1 to see the averge
                 response time for these common call types.
             </p>
-
+            
             <h2 class="content_title">Prototype 3</h2>
             <img src="../images/prototypes/calltype-num-district-stack.png">
             <p>
@@ -131,57 +131,78 @@
                 is the most common call type. An interesting data point is the
                 high level of alarm calls in the financial district.
             </p>
-
+            
             <h2 class="content_title">Prototype 4</h2>
             <img src="../images/prototypes/average-response-time-by-calltype-and-neighbor.png">
             <p>
                 <strong>Prototype 4 Description:</strong><br>
                 Shows the average response time(Difference between Received DtTm & On Scene DtTm) of all Neighborhoods of 4 most frequent Call Types in January 2019.
             </p>
-
+            
             <h2 class="content_title">Prototype 5</h2>
             <img src="../images/prototypes/parallel-vis1 .png">
             <p>
                 <strong>Prototype 5 Description:</strong><br>
-            Describes the average response time based on 3 different dimentions:
-            The call priority, unit type, and call type in January 2019.  
+                Describes the average response time based on 3 different dimentions:
+                The call priority, unit type, and call type in January 2019.  
             </p>
-
+            
             <h2 class="content_title">Prototype 6</h2>
             <img src="../images/prototypes/final-avg-response-bar.png">
             <p>
                 <strong>Prototype 6 Description:</strong><br>
-            Shows average response time in minutes for each call category. Red coloring is slower and green is faster average
+                Shows average response time in minutes for each call category. Red coloring is slower and green is faster average
                 response time.
             </p>
-
+            
             <h2 class="content_title">Feedback</h2>
-                (To be continued)
-            </div>
-        </section>
-
-        <!-- separator between sections -->
-        <hr class="container">
-
-        <!-- footer -->
-        <footer class="footer">
-            <div class="content has-text-centered">
-                <small>
-                    <a href="#top">
-                        <span class="fas fa-arrow-up"></span>
-                        <span>Back to Top</span>
-                    </a>
-                    <br/>
-                    <a href="/">CS 360/560 Data Visualization</a>
-                    &bullet;
-                    <a href="https://myusf.usfca.edu/arts-sciences/computer-science">Department of Computer Science</a>
-                    &bullet;
-                    <a href="https://www.usfca.edu/">University of San Franciscio</a>
-                </small>
-            </div>
-        </footer>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <!-- end body and html -->
-    </body>
-    </html>
+            <ul>
+                <li><strong>Prototype 1: </strong> 
+                    <br>
+                    Rotate the graph for better readability
+                    <br>
+                    Expand the green color scale for better recognization
+                    <br>
+                    Add buttons to showcase different values
+                </li>
+                <li><strong>Prototype 2: </strong> 
+                    <br>
+                    Truncate some less important Call Types
+                </li>
+                <li><strong>Prototype 3: </strong>
+                    <br>
+                    Rotate the graph for better readability
+                    <br>
+                    Sort the Call Type
+                    <br>
+                    Less related content, could dig deeper into response time.
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- separator between sections -->
+    <hr class="container">
+    
+    <!-- footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <small>
+                <a href="#top">
+                    <span class="fas fa-arrow-up"></span>
+                    <span>Back to Top</span>
+                </a>
+                <br/>
+                <a href="/">CS 360/560 Data Visualization</a>
+                &bullet;
+                <a href="https://myusf.usfca.edu/arts-sciences/computer-science">Department of Computer Science</a>
+                &bullet;
+                <a href="https://www.usfca.edu/">University of San Franciscio</a>
+            </small>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- end body and html -->
+</body>
+</html>
