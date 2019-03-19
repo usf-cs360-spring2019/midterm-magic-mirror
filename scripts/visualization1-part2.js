@@ -149,7 +149,7 @@ svg.append("line")
       .attr('stroke-opacity', 2);
 
        let y = reactionScale.invert(d3.select("#"+id3).attr('y2')).toFixed(2);
-       y =  y + " Minutes";
+       y =  y + " minutes";
 
        svg.append("text")
         .attr('class', 'label1')
@@ -210,7 +210,7 @@ svg.append("line")
 
 
            let y = reactionScale.invert(d3.select("#"+id3).attr('y2')).toFixed(2);
-         y = y + " Minutes";
+         y = y + " minutes";
 
          svg.append("text")
            .attr('class', 'label1')
@@ -237,27 +237,8 @@ svg.append("line")
            .attr('fill-opacity', 0.5)
            .attr('stroke-opacity', 0.8)
 
-         //    d3.selectAll("#"+id1)
-         //   .attr("stroke-width", 0.8)
-         //   .attr('fill-opacity', 0.5)
-         //   .attr('stroke-opacity', 0.8)
-         //
-         //
-         //   d3.selectAll("#"+id2)
-         //  .attr("stroke-width", 0.8)
-         //  .attr('fill-opacity', 0.5)
-         //  .attr('stroke-opacity', 0.8)
-         //
-         //
-         //  d3.selectAll("#"+id3)
-         // .attr("stroke-width", 0.8)
-         // .attr('fill-opacity', 0.5)
-         // .attr('stroke-opacity', 0.8)
-
-         svg.select(".label").remove();
-
-
-      });
+           svg.select(".label").remove();
+         });
       }
     for(var i = 0; i<45; i++){
     svg.append("line")
@@ -276,9 +257,8 @@ svg.append("line")
             let id2 = id3.substring(1);
             let id1 = id3.substring(2);
 
-
-           let y = reactionScale.invert(d3.select("#"+id3).attr('y2')).toFixed(2);
-            y = y + " Minutes";
+            let y = reactionScale.invert(d3.select("#"+id3).attr('y2')).toFixed(2);
+            y = y + " minutes";
 
             svg.append("text")
               .attr('class', 'label1')
@@ -291,33 +271,20 @@ svg.append("line")
               .style("fill", "Black")
               .text(y)
 
-
-
-
             d3.selectAll("#"+id1)
             .attr("stroke-width", 4)
             .attr('fill-opacity', 1)
             .attr('stroke-opacity', 2);
-
 
             d3.selectAll("#"+id2)
             .attr("stroke-width", 4)
             .attr('fill-opacity', 1)
             .attr('stroke-opacity', 2);
 
-
             d3.selectAll("#"+id3)
             .attr("stroke-width", 4)
             .attr('fill-opacity', 1)
             .attr('stroke-opacity', 2);
-
-            // svg
-            // .transition()
-            // .duration(function(d,i){
-            //   return 100*i;
-            // })
-            // .style('background-color', 'purple')
-
 
           }).on("mouseout", function(d){
             let id3 = d3.select(this).attr("id");
@@ -332,36 +299,6 @@ svg.append("line")
            .attr("stroke-width", 0.8)
            .attr('fill-opacity', 0.5)
            .attr('stroke-opacity', 0.8)
-           //
-           //   d3.selectAll("#"+id1)
-           //   .transition()
-           //   .duration(function(d,i){
-           //     return 1000*i;
-           //   })
-            // .attr("stroke-width", 0.8)
-            // .attr('fill-opacity', 0.5)
-            // .attr('stroke-opacity', 0.8)
-           //
-           //
-           //
-           //   d3.selectAll("#"+id2)
-           //   .transition()
-           //   .duration(function(d,i){
-           //     return 1000*i;
-           //   })
-           //  .attr("stroke-width", 0.8)
-           //  .attr('fill-opacity', 0.5)
-           //  .attr('stroke-opacity', 0.8)
-           //
-           //
-           //  d3.selectAll("#"+id3)
-           //  .transition()
-           //  .duration(function(d,i){
-           //    return 100*i;
-           //  })
-           // .attr("stroke-width", 0.8)
-           // .attr('fill-opacity', 0.5)
-           // .attr('stroke-opacity', 0.8)
 
            svg.select(".label").remove();
        });
@@ -381,7 +318,7 @@ svg.append("line")
                 .attr('transform', 'translate(' + 630 + ',' + 200 +')' + 'rotate(-90)')
   svg.append("text")
                .style("text-anchor", "middle")
-               .text("Average Response Time (Minutes)")
+               .text("Average Response Time (minutes)")
                .attr('transform', 'translate(' + 1040 + ',' + 200 +')' + 'rotate(-90)')
 
                let labels = ["Alarm", "Medical Incident","Structure Fire", "Traffic Collision"];
