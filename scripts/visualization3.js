@@ -53,7 +53,7 @@ margin = {top: 30,
         .padding(-1.1);
         
         svg.append("g")
-        .attr("transform", "translate(" + (margin.left + 60) + "," + margin.top * 3 + ")")
+        .attr("transform", "translate(" + (margin.left + 60) + "," + margin.top * 2.9 + ")")
         .style("font-size", 12)
         .call(d3.axisLeft(y).tickSize(0))
         .select(".domain").remove();
