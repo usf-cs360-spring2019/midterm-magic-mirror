@@ -172,8 +172,8 @@ margin = {top: 30,
         
         rects.on("mouseout.highlight", function(d) {
             d3.select(this).style("stroke", null);
-            status1.text(" ");
-            status2.text("");
-            status3.text("");
+            status1.text("Call Type: ");
+            status2.text("Neighborhooods:");
+            status3.text("Average ");
         });
     })
