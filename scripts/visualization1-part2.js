@@ -42,7 +42,7 @@ convertRow = function(row, index){
 }
 
 var DrawParallelCoordinate = function(){
-  let svg = d3.select("body").select("section:nth-child(3)").select("div").select("svg");
+let svg = d3.select("body").select("section:nth-child(3)").select("div").select("svg");
 let margin = {
   top:    15,
   right:  35,
@@ -50,7 +50,6 @@ let margin = {
   left:   40
 };
 let bounds = svg.node().getBoundingClientRect();
-
 let plotWidth = bounds.width - margin.right - margin.left;
 let plotHeight = bounds.height - margin.top - margin.bottom;
 
@@ -58,8 +57,6 @@ let unitScale = d3.scaleLinear()
         .domain([1, d3.max(outputObj.unitTypeNum)])
         .range([0, plotHeight])
         .nice();
-
-
 
 let CallTypeScale = d3.scaleLinear()
   .domain([1, 4])
@@ -91,14 +88,9 @@ if (plot.size() < 1) {
     let xAxis2 = d3.axisBottom(CallTypeScale);
     let xAxis3 = d3.axisTop(reactionScale);
 
-
-
    xAxis.tickValues(['1', '2', '3']);
    xAxis1.tickValues(['']);
    xAxis2.tickValues(['']);
-
-
-
 
     if (plot.select("g#x-axis1").size() < 1) {
     let xGroup = plot.append("g").attr("id", "x-axis1");
@@ -146,7 +138,6 @@ svg.append("line")
         .attr('fill-opacity', 1)
         .attr('stroke-opacity', 2);
 
-
         d3.select("#"+id2)
        .attr("stroke-width", 4)
        .attr('fill-opacity', 1)
@@ -157,11 +148,10 @@ svg.append("line")
       .attr('fill-opacity', 1)
       .attr('stroke-opacity', 2);
 
-
        let y = reactionScale.invert(d3.select("#"+id3).attr('y2')).toFixed(2);
-      y =  y + " Minutes";
+       y =  y + " Minutes";
 
-      svg.append("text")
+       svg.append("text")
         .attr('class', 'label1')
         .attr("dy", ".5em")
         .style('font-familly', 'Arial')
@@ -171,29 +161,15 @@ svg.append("line")
         .attr("class","label")
         .style("fill", "Black")
         .text(y)
-
-
       }).on("mouseout", function(d){
-        let id = d3.select(this).attr("id");
-        let id2 ="l"+id;
-        let id3 ="ll"+id;
-        d3.select("#"+id)
+        d3.selectAll('line')
+        .transition()
+        .duration(function(d,i){
+          return 10*i;
+        })
         .attr("stroke-width", 0.8)
         .attr('fill-opacity', 0.5)
         .attr('stroke-opacity', 0.8)
-
-
-        d3.select("#"+id2)
-        .attr("stroke-width", 0.8)
-        .attr('fill-opacity', 0.5)
-        .attr('stroke-opacity', 0.8)
-
-
-        d3.select("#"+id3)
-        .attr("stroke-width", 0.8)
-        .attr('fill-opacity', 0.5)
-        .attr('stroke-opacity', 0.8)
-
         svg.select(".label").remove();
    });
  }
@@ -251,22 +227,32 @@ svg.append("line")
            let id2 = d3.select(this).attr("id");
            let id1 = id2.substring(1);
            let id3 = "l"+id2;
-            d3.selectAll("#"+id1)
+
+           d3.selectAll('line')
+           .transition()
+           .duration(function(d,i){
+             return 10*i;
+           })
            .attr("stroke-width", 0.8)
            .attr('fill-opacity', 0.5)
            .attr('stroke-opacity', 0.8)
 
-
-           d3.selectAll("#"+id2)
-          .attr("stroke-width", 0.8)
-          .attr('fill-opacity', 0.5)
-          .attr('stroke-opacity', 0.8)
-
-
-          d3.selectAll("#"+id3)
-         .attr("stroke-width", 0.8)
-         .attr('fill-opacity', 0.5)
-         .attr('stroke-opacity', 0.8)
+         //    d3.selectAll("#"+id1)
+         //   .attr("stroke-width", 0.8)
+         //   .attr('fill-opacity', 0.5)
+         //   .attr('stroke-opacity', 0.8)
+         //
+         //
+         //   d3.selectAll("#"+id2)
+         //  .attr("stroke-width", 0.8)
+         //  .attr('fill-opacity', 0.5)
+         //  .attr('stroke-opacity', 0.8)
+         //
+         //
+         //  d3.selectAll("#"+id3)
+         // .attr("stroke-width", 0.8)
+         // .attr('fill-opacity', 0.5)
+         // .attr('stroke-opacity', 0.8)
 
          svg.select(".label").remove();
 
@@ -338,25 +324,44 @@ svg.append("line")
             let id2 = id3.substring(1);
             let id1 = id3.substring(2);
 
-
-
-             d3.selectAll("#"+id1)
-            .attr("stroke-width", 0.8)
-            .attr('fill-opacity', 0.5)
-            .attr('stroke-opacity', 0.8)
-
-
-
-             d3.selectAll("#"+id2)
-            .attr("stroke-width", 0.8)
-            .attr('fill-opacity', 0.5)
-            .attr('stroke-opacity', 0.8)
-
-
-            d3.selectAll("#"+id3)
+           d3.selectAll('line')
+           .transition()
+           .duration(function(d,i){
+             return 10*i;
+           })
            .attr("stroke-width", 0.8)
            .attr('fill-opacity', 0.5)
            .attr('stroke-opacity', 0.8)
+           //
+           //   d3.selectAll("#"+id1)
+           //   .transition()
+           //   .duration(function(d,i){
+           //     return 1000*i;
+           //   })
+            // .attr("stroke-width", 0.8)
+            // .attr('fill-opacity', 0.5)
+            // .attr('stroke-opacity', 0.8)
+           //
+           //
+           //
+           //   d3.selectAll("#"+id2)
+           //   .transition()
+           //   .duration(function(d,i){
+           //     return 1000*i;
+           //   })
+           //  .attr("stroke-width", 0.8)
+           //  .attr('fill-opacity', 0.5)
+           //  .attr('stroke-opacity', 0.8)
+           //
+           //
+           //  d3.selectAll("#"+id3)
+           //  .transition()
+           //  .duration(function(d,i){
+           //    return 100*i;
+           //  })
+           // .attr("stroke-width", 0.8)
+           // .attr('fill-opacity', 0.5)
+           // .attr('stroke-opacity', 0.8)
 
            svg.select(".label").remove();
        });
