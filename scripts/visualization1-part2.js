@@ -158,7 +158,7 @@ svg.append("line")
       .attr('stroke-opacity', 2);
 
 
-       let y = reactionScale.invert(d3.select("#"+id3).attr('y2')).toFixed(3);
+       let y = reactionScale.invert(d3.select("#"+id3).attr('y2')).toFixed(2);
       y =  y + " Minutes";
 
       svg.append("text")
@@ -233,7 +233,7 @@ svg.append("line")
          .attr('stroke-opacity', 2);
 
 
-           let y = reactionScale.invert(d3.select("#"+id3).attr('y2')).toFixed(3);
+           let y = reactionScale.invert(d3.select("#"+id3).attr('y2')).toFixed(2);
          y = y + " Minutes";
 
          svg.append("text")
@@ -291,7 +291,7 @@ svg.append("line")
             let id1 = id3.substring(2);
 
 
-           let y = reactionScale.invert(d3.select("#"+id3).attr('y2')).toFixed(3);
+           let y = reactionScale.invert(d3.select("#"+id3).attr('y2')).toFixed(2);
             y = y + " Minutes";
 
             svg.append("text")
@@ -386,6 +386,13 @@ svg.append("text")
 .attr('transform', 'translate(' + 340 + ',' + pos +')' + 'rotate(-90)')
 }
 
+svg.append("text")
+.style("text-anchor", "middle")
+.style('font-size', '12')
+.text("Unit Types")
+.attr('x', 1076)
+.attr('y', 25)
+.style('font-weight', 'bold')
 
           for(let j =0; j< 7; j++){
           svg.append("g").append('rect')
