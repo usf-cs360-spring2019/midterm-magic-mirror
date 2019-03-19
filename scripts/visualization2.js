@@ -286,7 +286,7 @@ var drawBarChart2 = function() {
               	.style("fill", "url(#linear-gradient)");
 
                 let colorScaleAxis = d3.scaleLinear()
-                  .domain([12.62, 43.2])
+                  .domain([10, 45])
                   .range([0, 125])
 
                 let colorAxis = d3.axisTop(colorScaleAxis)
@@ -298,27 +298,10 @@ var drawBarChart2 = function() {
 
                 colorScale = d3.scaleSequential(d3.interpolatePiYG).domain([0, 42]);
 
-                // axisScale = d3.scaleLinear()
-                //   .domain(colorScale.domain())
-                //   .range([12.62, plotWidth - margin.right]);
-
-                  // colorAxis = g => g
-                  //   .attr("class", `x-axis`)
-                  //   .attr("transform", `translate(780,10)`)
-                  //   .call(d3.axisTop(colorAxis)
-                  //   .ticks(5)
-                  //   .tickSize(-barHeight))
-
-              // margin = ({top: 20, right: 40, bottom: 30, left: 40})
-              //
-              // height = 100
-              //
-              //   return svg.node();
           }
 
           var drawLegend2 = function() {
             console.log("in drawLegend");
-            //const svg = d3.select(DOM.svg(width, height));
             const defs2 = svg.append("defs");
 
             const linearGradient2 = defs2.append("linearGradient")
@@ -344,8 +327,6 @@ var drawBarChart2 = function() {
             let colorScaleAxis2 = d3.scaleLinear()
               .domain([0, 6])
               .range([0, 125])
-
-
 
             let colorAxis2 = d3.axisTop(colorScaleAxis2)
                             .ticks(3);
