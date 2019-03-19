@@ -52,6 +52,7 @@ let g1 =  svg.attr("width", plotWidth)
     .append("g")
     .attr('transform', 'translate(' + plotWidth/2  + ',' + plotHeight/2 + ')');
 
+
 var arcData = d3.pie().sort(null).value(function(d){
   return d;
 })(output.NumRecords);
@@ -59,7 +60,7 @@ var arcData = d3.pie().sort(null).value(function(d){
 
 var colorScale = d3.scaleOrdinal()
     .domain(0, arcData)
-    .range(["#4E79A7","#F28E2B", "#A0CBE8", "#FABFD2", "#FFBE7D", "#D7B5A6", "#8CD17D", "#B6992D", "#F1CE63", "#499894", "#86BCB6", "#59A14F", "#FF9D9A", "#79706E","#BAB0AC","#D37295","#E15759","#4E79A7","#D4A6C8","#9D7660", "#D7B5A6", "#4E79A7"]);
+    .range(["#F15854","#60BD68", "#A0CBE8", "#FABFD2", "#F28E2B", "#D7B5A6", "#B276B2", "#4D4D4D", "#4E79A7", "#499894"]);
 names = output.CallType;
 
 
@@ -74,15 +75,19 @@ names = output.CallType;
           .attr("stroke", "black")
           .attr("stroke-width", 0.1)
           .on("mouseover", function(d, i) {
+          let color = d3.select(this).attr('fill');
           svg.append("text")
             .attr("dy", ".5em")
             .style('font-familly', 'Arial')
-            .attr('x', 180)
-            .attr('y', 150)
-            .attr('font-size', 14)
+            .attr('x', 720)
+            .attr('y', 230)
+            .style('font-size', '16')
             .attr("class","label")
-            .style("fill", "Black")
-            .text(output.CallType[i] + " " + output.NumRecords[i]);
+            .attr("fill", function(d){
+              return color;
+            })
+            .style('font-weight', 'bold')
+            .text(output.CallType[i] + ": " + output.NumRecords[i]);
       })
       .on("mouseout", function(d) {
         svg.select(".label").remove();
@@ -102,7 +107,7 @@ names = output.CallType;
             .style('font-size', 14)
             .style("fill", "black")
             .text(function(d, i){if (Math.floor((output.NumRecords[i]/(25271))*100) > 1){
-              return Math.floor((output.NumRecords[i]/(25271))*100) + "%";
+              return Math.floor((output.NumRecords[i]/(24834))*100) + "%";
             } else{
               return;
             }});
@@ -120,7 +125,7 @@ g2.append("text")
 .attr('font-size', 16)
 .attr('font-weight', 'bold')
 
-for(let j =0; j< 22; j++){
+for(let j =0; j< 9; j++){
 g2.append("g").append('rect')
 .attr("fill", function(d){return colorScale(j)} )
 .attr('width', '10')
@@ -128,7 +133,22 @@ g2.append("g").append('rect')
 .attr('x', '818')
 .attr('y', function(d){
   return (20 + j*14);
-});
+}).on('mouseover', function(d){
+  let color = d3.select(this).attr('fill');
+  g1.selectAll("path")
+  .style('opacity', '0.2')
+  .filter(function(d){
+    return d3.select(this).attr('fill') == color;
+  }).attr("stroke", "purple")
+  .attr("stroke-width", 2)
+  .style('opacity', '1')
+  .transition();
+  }).on('mouseout', function(d){
+  g1.selectAll("path")
+  .attr("stroke", "black")
+  .attr("stroke-width", 0.1)
+  .style('opacity', '1')
+})
 g2.append("text")
 .text(function(d){
   return output.CallType[j];
@@ -141,5 +161,28 @@ g2.append("text")
 });
 }
 
+g2.append("text")
+.text("Medical Incident")
+.style('font-familly', 'auto')
+.style('font-size', 14)
+.style("fill", "black")
+.attr('x', '380')
+.attr('y', '345')
+
+g2.append("text")
+.text("Alarms")
+.style('font-familly', 'auto')
+.style('font-size', 14)
+.style("fill", "black")
+.attr('x', '620')
+.attr('y', '35')
+
+g2.append("text")
+.text("Structure Fire")
+.style('font-familly', 'auto')
+.style('font-size', 14)
+.style("fill", "black")
+.attr('x', '350')
+.attr('y', '40')
 }
 LoadingData();

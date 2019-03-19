@@ -21,7 +21,7 @@ convertRow = function(row, index){
       case "Priority":
       outputObj.priority.push(+row[col]);
       break;
-      case "ReactionTimeInterval":
+      case "AvgResp":
       outputObj.reactionTime.push(+(row[col]));
       break;
       case "UnitTypeNum":
@@ -36,6 +36,7 @@ convertRow = function(row, index){
 }
  d3.csv("..\\..\\input\\visualization1\\reaction_time.csv", convertRow)
  .then(() => {
+  // console.log(outputObj.reactionTime[0]);
   DrawParallelCoordinate();
     })
 }
@@ -71,10 +72,13 @@ let CallTypeScale = d3.scaleLinear()
           .nice();
 
   let reactionScale = d3.scaleLinear()
-                  .domain([0, d3.max(outputObj.reactionTime)])
+                  .domain([d3.min(outputObj.reactionTime), d3.max(outputObj.reactionTime)])
                   .range([plotHeight, 0])
                   .nice();
-
+let reverseScale = d3.scaleLinear()
+                   .domain([plotHeight, 0])
+                   .range([d3.min(outputObj.reactionTime), d3.max(outputObj.reactionTime)])
+                   .nice();
 
 let plot = svg.select("g#plot2");
 
@@ -90,33 +94,10 @@ if (plot.size() < 1) {
 
 
    xAxis.tickValues(['1', '2', '3']);
-   xAxis1.tickValues(['1', '2', '3', '4', '5', '6', '7']);
-   xAxis2.tickValues(['1', '2', '3', '4']);
+   xAxis1.tickValues(['']);
+   xAxis2.tickValues(['']);
 
-    // xAxis1.tickFormat([function(d){
-    //   switch (d) {
-    //   case 1:
-    //       return "Engine";
-    //       break;
-    //   case 2:
-    //     return "Truck"
-    //         break;
-    //   case 3:
-    //     return "Chief"
-    //     break;
-    //   case 4:
-    //     return "Private"
-    //     break;
-    // case 5:
-    //   return "Medic"
-    // case 6:
-    // return "Support"
-    // case 7:
-    //   return "Investigation"
-    //   break;
-    //     default:
-    //   }
-    // }]);
+
 
 
     if (plot.select("g#x-axis1").size() < 1) {
@@ -129,7 +110,7 @@ if (plot.size() < 1) {
     let xGroup2 = plot.append("g").attr('id', 'x-axis2').attr('transform', 'translate(' + 604 + ','+ 0 +')' + 'rotate(90, 0, 2)')
     xGroup2.call(xAxis2);
 
-    let xGroup3 = plot.append("g").attr('id', 'x-axis2').attr('transform', 'translate(' + 968 + ','+ 2 +')' + 'rotate(90, 0, 2)')
+    let xGroup3 = plot.append("g").attr('id', 'x-axis2').attr('transform', 'translate(' + 968 + ','+ 0 +')' + 'rotate(90, 0, 2)')
     xGroup3.call(xAxis3);
 
 
@@ -140,9 +121,9 @@ if (plot.size() < 1) {
 }
 var colorScale = d3.scaleOrdinal()
     .domain(1, 7)
-    .range(["#69bf8b", "#aebf69", "#d9d11b","#FAD23C" , "#bf6969", "#800000", "black"]);
+    .range(['#e6194b', '#4363d8', '#ffe119', '#f58231', '#3cb44b', '#911eb4', '#46f0f0']);
 
-for(var i = 0; i<47; i++){
+for(var i = 0; i<45; i++){
 svg.append("line")
       .attr('x1', plotHeight + 18)
       .attr('y1', 40+ priorityScale(outputObj.priority[i]))
@@ -164,7 +145,7 @@ svg.append("line")
         .attr("stroke-width", 4)
         .attr('fill-opacity', 1)
         .attr('stroke-opacity', 2);
-        svg.style('background', '#whitesmoke')
+
 
         d3.select("#"+id2)
        .attr("stroke-width", 4)
@@ -175,18 +156,21 @@ svg.append("line")
       .attr("stroke-width", 4)
       .attr('fill-opacity', 1)
       .attr('stroke-opacity', 2);
-      svg.style('background', '#whitesmoke')
+
+
+       let y = reactionScale.invert(d3.select("#"+id3).attr('y2')).toFixed(3);
+      y =  y + " Minutes";
 
       svg.append("text")
         .attr('class', 'label1')
         .attr("dy", ".5em")
         .style('font-familly', 'Arial')
-        .attr('x', 990)
-        .attr('y',  d3.select(this).attr('y2'))
-        .style('font-size', 27)
+        .attr('x', 1050)
+        .attr('y',  300)
+        .style('font-size', 13)
         .attr("class","label")
         .style("fill", "Black")
-        .text(d3.select("#"+id3).attr('y2'))
+        .text(y)
 
 
       }).on("mouseout", function(d){
@@ -197,24 +181,24 @@ svg.append("line")
         .attr("stroke-width", 0.8)
         .attr('fill-opacity', 0.5)
         .attr('stroke-opacity', 0.8)
-        svg.style('background', 'whitesmoke')
+
 
         d3.select("#"+id2)
         .attr("stroke-width", 0.8)
         .attr('fill-opacity', 0.5)
         .attr('stroke-opacity', 0.8)
-        svg.style('background', 'whitesmoke')
+
 
         d3.select("#"+id3)
         .attr("stroke-width", 0.8)
         .attr('fill-opacity', 0.5)
         .attr('stroke-opacity', 0.8)
-        svg.style('background', 'whitesmoke')
+
         svg.select(".label").remove();
    });
  }
 
-   for(var i = 0; i<47; i++){
+   for(var i = 0; i<45; i++){
    svg.append("line")
          .attr('x1', -34)
          .attr('y1', -5+unitScale(outputObj.unitTypeNum[i]))
@@ -235,32 +219,33 @@ svg.append("line")
            .attr("stroke-width", 4)
            .attr('fill-opacity', 1)
            .attr('stroke-opacity', 2)
-           .attr("stdDeviation","3.5")
-           .attr("result","coloredBlur")
-           svg.style('background', '#whitesmoke')
+
 
            d3.select("#"+id2)
           .attr("stroke-width", 4)
           .attr('fill-opacity', 1)
           .attr('stroke-opacity', 2);
-          svg.style('background', '#whitesmoke')
+
 
           d3.select("#"+id3)
          .attr("stroke-width", 4)
          .attr('fill-opacity', 1)
          .attr('stroke-opacity', 2);
-         svg.style('background', '#whitesmoke')
+
+
+           let y = reactionScale.invert(d3.select("#"+id3).attr('y2')).toFixed(3);
+         y = y + " Minutes";
 
          svg.append("text")
            .attr('class', 'label1')
            .attr("dy", ".5em")
            .style('font-familly', 'Arial')
-           .attr('x', 990)
-           .attr('y',  d3.select(this).attr('y2'))
-           .style('font-size', 27)
+           .attr('x', 1050)
+           .attr('y',  300)
+           .style('font-size', 13)
            .attr("class","label")
            .style("fill", "Black")
-           .text(d3.select("#"+id3).attr('y2').substring(0, 8))
+           .text(y)
 
          }).on("mouseout", function(d){
            let id2 = d3.select(this).attr("id");
@@ -270,25 +255,25 @@ svg.append("line")
            .attr("stroke-width", 0.8)
            .attr('fill-opacity', 0.5)
            .attr('stroke-opacity', 0.8)
-           svg.style('background', 'whitesmoke')
+
 
            d3.selectAll("#"+id2)
           .attr("stroke-width", 0.8)
           .attr('fill-opacity', 0.5)
           .attr('stroke-opacity', 0.8)
-          svg.style('background', 'whitesmoke')
+
 
           d3.selectAll("#"+id3)
          .attr("stroke-width", 0.8)
          .attr('fill-opacity', 0.5)
          .attr('stroke-opacity', 0.8)
-         svg.style('background', 'whitesmoke')
+
          svg.select(".label").remove();
 
 
       });
       }
-    for(var i = 0; i<47; i++){
+    for(var i = 0; i<45; i++){
     svg.append("line")
           .attr('x1', 288)
           .attr('y1', -5 +  CallTypeScale(outputObj.callTypeNum[i]))
@@ -305,16 +290,17 @@ svg.append("line")
             let id2 = id3.substring(1);
             let id1 = id3.substring(2);
 
-            let y = d3.select(this).attr('y2');
 
+           let y = reactionScale.invert(d3.select("#"+id3).attr('y2')).toFixed(3);
+            y = y + " Minutes";
 
             svg.append("text")
               .attr('class', 'label1')
               .attr("dy", ".5em")
               .style('font-familly', 'Arial')
-              .attr('x', 990)
-              .attr('y',  d3.select(this).attr('y2'))
-              .style('font-size', 27)
+              .attr('x', 1050)
+              .attr('y',  300)
+              .style('font-size', 13)
               .attr("class","label")
               .style("fill", "Black")
               .text(y)
@@ -323,19 +309,19 @@ svg.append("line")
             .attr("stroke-width", 4)
             .attr('fill-opacity', 1)
             .attr('stroke-opacity', 2);
-            svg.style('background', 'whitesmoke')
+
 
             d3.selectAll("#"+id2)
             .attr("stroke-width", 4)
             .attr('fill-opacity', 1)
             .attr('stroke-opacity', 2);
-            svg.style('background', 'whitesmoke')
+
 
             d3.selectAll("#"+id3)
             .attr("stroke-width", 4)
             .attr('fill-opacity', 1)
             .attr('stroke-opacity', 2);
-            svg.style('background', 'whitesmoke')
+
 
           }).on("mouseout", function(d){
             let id3 = d3.select(this).attr("id");
@@ -346,20 +332,20 @@ svg.append("line")
             .attr("stroke-width", 0.8)
             .attr('fill-opacity', 0.5)
             .attr('stroke-opacity', 0.8)
-            svg.style('background', 'whitesmoke')
+
 
 
              d3.selectAll("#"+id2)
             .attr("stroke-width", 0.8)
             .attr('fill-opacity', 0.5)
             .attr('stroke-opacity', 0.8)
-            svg.style('background', 'whitesmoke')
+
 
             d3.selectAll("#"+id3)
            .attr("stroke-width", 0.8)
            .attr('fill-opacity', 0.5)
            .attr('stroke-opacity', 0.8)
-           svg.style('background', 'whitesmoke')
+
            svg.select(".label").remove();
        });
        }
@@ -371,39 +357,52 @@ svg.append("line")
   svg.append("text")
          .style("text-anchor", "middle")
          .text("Group Type")
-         .attr('transform', 'translate(' + 340 + ',' + 200 +')' + 'rotate(-90)')
+         .attr('transform', 'translate(' + 315 + ',' + 200 +')' + 'rotate(-90)')
   svg.append("text")
                 .style("text-anchor", "middle")
                 .text("Call Type")
-                .attr('transform', 'translate(' + 660 + ',' + 200 +')' + 'rotate(-90)')
+                .attr('transform', 'translate(' + 630 + ',' + 200 +')' + 'rotate(-90)')
   svg.append("text")
                .style("text-anchor", "middle")
-               .text("LOG2 Reaction Time")
+               .text("Average Response Time (Minutes)")
                .attr('transform', 'translate(' + 1040 + ',' + 200 +')' + 'rotate(-90)')
 
-               for(let j =0; j< 7; j++){
+               let labels = ["Alarm", "Medical Incident","Structure Fire", "Traffic Collision"];
+for(let i=0; i<4; i++){
+  let pos = 30 + i*105;
+             svg.append("text")
+            .style("text-anchor", "middle")
+            .style('font-size', '12')
+            .text(labels[i])
+            .attr('transform', 'translate(' + 660 + ',' + pos +')' + 'rotate(-90)')
+}
+let labels2 = ["ENGINE", "TRUCK","CHIEF","PRIVATE", "MEDIC", "SUPPORT", "INVESTIGATION"];
+for(let i=0; i<7; i++){
+let pos = 30 + i*55;
+svg.append("text")
+.style("text-anchor", "middle")
+.style('font-size', '8')
+.text(labels2[i])
+.attr('transform', 'translate(' + 340 + ',' + pos +')' + 'rotate(-90)')
+}
+
+
+          for(let j =0; j< 7; j++){
           svg.append("g").append('rect')
           .attr("fill", function(d){
-            if(j*9 < 47){
-            return colorScale(outputObj.unitTypeNum[j*9])
-          }
-          else{
-            return colorScale(7)
-          }})
+            return colorScale(j+1);
+          })
           .attr('width', '10')
-          .attr('height', '10')
+          .attr('height','10')
           .attr('x', '1048')
           .attr('y', function(d){
             return (30 + j*13);
           });
-          svg.append("text")
+
+svg.append("text")
 .text(function(d){
-  if(j*9 < 47){
-  return outputObj.unitType[j*9]
-}
-else{
-  return "INVESTIGATION"
-}}).style('font-familly', 'Arial')
+  return labels2[j];
+}).style('font-familly', 'Arial')
 .style('font-size', 10)
 .style("fill", "black")
 .attr('x', '1060')
@@ -411,16 +410,12 @@ else{
 return (38 + j*13)
 });}
 
-// svg.append("g")
-//     .attr("class", "x axis")
-//     .attr("transform", "translate(0," + plotHeight + ")")
-//     .call(xAxis1)
-//   .selectAll("text")
-//     .attr("y", 0)
-//     .attr("x", 9)
-//     .attr("dy", ".35em")
-//     .attr("transform", "rotate(-90)")
-//     .style("text-anchor", "start");
+svg.append("g").append('rect')
+.attr("fill","white")
+.attr('width', '90')
+.attr('height', '40')
+.attr('x', 1045)
+.attr('y',  280)
 
 
 }
