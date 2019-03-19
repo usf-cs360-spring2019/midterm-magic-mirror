@@ -166,14 +166,14 @@ margin = {top: 30,
             .style("stroke-width", 2);
             
             status1.text("Call Type: " + d['Call Type']).style("font-size", "16px");
-            status2.text("Neighborhooods:" + d['Neighborhooods - Analysis Boundaries']).style("font-size", "16px");
-            status3.text("Average " + d['Avg. Response Time(mins)']).style("font-size", "16px");
+            status2.text("Neighborhooods: " + d['Neighborhooods - Analysis Boundaries']).style("font-size", "16px");
+            status3.text("Average: " + d['Avg. Response Time(mins)']).style("font-size", "16px");
         });
         
         rects.on("mouseout.highlight", function(d) {
             d3.select(this).style("stroke", null);
             status1.text("Call Type: ");
-            status2.text("Neighborhooods:");
-            status3.text("Average ");
+            status2.text("Neighborhooods: ");
+            status3.text("Average: ");
         });
     })
