@@ -133,6 +133,11 @@ svg.append("line")
         let id2 ="l"+id;
           let id3 ="ll"+id;
 
+          d3.selectAll('line')
+          .attr("stroke-width", 0.8)
+          .attr('fill-opacity', 0.5)
+          .attr('stroke-opacity', 0.8)
+
          d3.select("#"+id)
         .attr("stroke-width", 4)
         .attr('fill-opacity', 1)
@@ -165,7 +170,7 @@ svg.append("line")
         d3.selectAll('line')
         .transition()
         .duration(function(d,i){
-          return 10*i;
+          return 2*i;
         })
         .attr("stroke-width", 0.8)
         .attr('fill-opacity', 0.5)
@@ -191,6 +196,12 @@ svg.append("line")
            let id2 = d3.select(this).attr("id");
            let id1 = id2.substring(1);
            let id3 = "l"+id2;
+
+           d3.selectAll('line')
+           .attr("stroke-width", 0.8)
+           .attr('fill-opacity', 0.5)
+           .attr('stroke-opacity', 0.8)
+
             d3.select("#"+id1)
            .attr("stroke-width", 4)
            .attr('fill-opacity', 1)
@@ -231,7 +242,7 @@ svg.append("line")
            d3.selectAll('line')
            .transition()
            .duration(function(d,i){
-             return 10*i;
+             return 2*i;
            })
            .attr("stroke-width", 0.8)
            .attr('fill-opacity', 0.5)
@@ -271,6 +282,11 @@ svg.append("line")
               .style("fill", "Black")
               .text(y)
 
+              d3.selectAll('line')
+              .attr("stroke-width", 0.8)
+              .attr('fill-opacity', 0.5)
+              .attr('stroke-opacity', 0.8)
+
             d3.selectAll("#"+id1)
             .attr("stroke-width", 4)
             .attr('fill-opacity', 1)
@@ -294,7 +310,7 @@ svg.append("line")
            d3.selectAll('line')
            .transition()
            .duration(function(d,i){
-             return 10*i;
+             return 2*i;
            })
            .attr("stroke-width", 0.8)
            .attr('fill-opacity', 0.5)
